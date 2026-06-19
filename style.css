@@ -124,6 +124,37 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; padd
 }
 .btn-nav-cta:hover { background:var(--orange-dark); transform:translateY(-1px); }
 
+.lang-select,
+.mobile-lang-select {
+  border:1px solid var(--grey-200);
+  border-radius:999px;
+  padding:.55rem .9rem;
+  font-size:.85rem;
+  color:var(--grey-900);
+  background:var(--white);
+  min-width:70px;
+  transition:border-color var(--dur) ease;
+}
+
+.lang-select:focus,
+.mobile-lang-select:focus {
+  outline:none;
+  border-color:var(--orange);
+}
+
+.mobile-lang-wrap {
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:1.5rem;
+}
+
+@media (max-width: 860px) {
+  .lang-select {
+    display:none;
+  }
+}
+
 /* ── NAVBAR ─────────────────────────────────────── */
 .navbar {
   position: sticky;
