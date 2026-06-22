@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brochado &amp; Castro — Contactos</title>
+<meta content="Contacte a Brochado &amp; Castro — Segurança Rodoviária desde 1973." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+.contact-hero {
+  background: var(--grey-900);
+  padding: calc(var(--nav-h) + 3rem) 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(204,0,0,.18) 0%, transparent 60%);
+}
+.contact-hero .container { position: relative; z-index: 1; }
+
+.contact-section { padding: 5rem 0; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+/* Info cards */
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.info-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.info-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  background: var(--orange-pale);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+}
+.info-card-title {
+  font-weight: 700;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--grey-900);
+  margin-bottom: .3rem;
+}
+.info-card-val {
+  font-size: .95rem;
+  color: var(--grey-600);
+  line-height: 1.55;
+}
+.info-card-val a { color: var(--orange); font-weight: 600; }
+.info-card-val a:hover { text-decoration: underline; }
+
+.info-cards-stack { display: flex; flex-direction: column; gap: 1rem; }
+
+.fhours { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:var(--radius-sm); overflow:hidden; }
+.fhour-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:.6rem .9rem; font-size:.82rem;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.fhour-row:last-child { border-bottom:none; }
+.fhour-row span { color:rgba(255,255,255,.45); }
+.fhour-row strong { color:rgba(255,255,255,.25); font-weight:400;}
+.fhour-row strong.closed { color:rgba(255,255,255,.25); font-weight:400; }
+
+/* Map embed placeholder */
+.map-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--grey-100);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--grey-200);
+  margin-top: 1.5rem;
+  position: relative;
+}
+.map-placeholder iframe {
+  width: 100%; height: 100%; border: none;
+}
+
+/* Form styling overrides */
+.cform-wrap {
+  background: var(--white) !important;
+  border: 1px solid var(--grey-200) !important;
+  border-top: 4px solid var(--orange) !important;
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+/* Override global dark cform-label for light context */
+.contact-section .cform-label {
+  color: var(--grey-700) !important;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+/* Fix invisible inputs: force dark text and white background in light form */
+.contact-section .cform-input,
+.cform-wrap .cform-input {
+  color: var(--grey-900) !important;
+  background: var(--white) !important;
+  border-color: var(--grey-200) !important;
+}
+.contact-section .cform-input::placeholder,
+.cform-wrap .cform-input::placeholder {
+  color: var(--grey-400) !important;
+}
+.cform-section-label {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--grey-900);
+  margin-bottom: 1.75rem;
+  letter-spacing: .03em;
+}
+.cform-section-label span { color: var(--orange); }
+</style>
+</head>
+<body>
+<header class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo" href="index.html">
+<img alt="B.C.L. Logo" class="logo-img" src="images/logo_bcl.png"/>
+<div class="logo-text-group">
+<span class="logo-primary">BROCHADO<span class="logo-amp">&amp;</span>CASTRO</span>
+<span class="logo-sub" data-en="ROAD SAFETY" data-pt="SEGURANÇA RODOVIÁRIA">SEGURANÇA RODOVIÁRIA</span>
+</div>
+</a>
+<nav class="nav-links">
+<a class="nl" data-en="Home" data-pt="Início" href="index.html">Início</a>
+<a class="nl" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+<a class="nl" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+<a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="nl" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="nl active" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
+</nav>
+<div class="nav-right">
+<a class="btn-nav-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+<div class="lang-switcher">
+<button class="lang-btn active" data-lang="pt">PT</button>
+<button class="lang-btn" data-lang="en">EN</button>
+</div>
+<button class="burger" id="burger"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<div class="mobile-overlay" id="mobile-overlay">
+<nav class="mobile-nav">
+<a class="mn-link" data-en="Home" data-pt="Início" href="index.html">Início</a>
+<a class="mn-link" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+<a class="mn-link" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+<a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="mn-link active" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
+<a class="btn-nav-cta mn-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+<div class="mobile-lang-wrap">
+<div class="lang-switcher">
+<button class="lang-btn active" data-lang="pt">PT</button>
+<button class="lang-btn" data-lang="en">EN</button>
+</div>
+</div>
+</nav>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="sh-tag sh-tag--dark" data-en="Get In Touch" data-pt="Fale Connosco">Fale Connosco</div>
+    <h1 class="sh-title sh-title--white"><span data-en="CONTACT OUR" data-pt="CONTACTE A NOSSA">CONTACTE A NOSSA</span> <span class="title-orange" data-en="TEAM" data-pt="EQUIPA">EQUIPA</span></h1>
+    <p class="sh-sub sh-sub--muted" data-en="We are available Monday to Friday to answer any questions about our products, services and projects." data-pt="Estamos disponíveis de segunda a sexta-feira para esclarecer qualquer dúvida sobre os nossos produtos, serviços e projetos.">Estamos disponíveis de segunda a sexta-feira para esclarecer qualquer dúvida sobre os nossos produtos, serviços e projetos.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info + Hours + Map -->
+      <div>
+        <div class="info-cards-stack">
+          <div class="info-card">
+            <div class="info-icon">
+              <svg width="22" height="22" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <div class="info-card-title" data-en="Phone" data-pt="Telefone">Telefone</div>
+              <div class="info-card-val"><a href="tel:+351229511174">+351 229 511 174</a></div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg width="22" height="22" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <div class="info-card-title" data-en="Email" data-pt="E-mail">E-mail</div>
+              <div class="info-card-val"><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg width="22" height="22" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <div class="info-card-title" data-en="Address" data-pt="Morada">Morada</div>
+              <div class="info-card-val">Rua Fonte Velha, 474<br/>4460-729 Matosinhos<br/><a href="https://www.google.com/maps/place/Bcl+-+Brochado+%26+Castro,+Lda./@41.1952331,-8.6368682,108m/data=!3m1!1e3!4m15!1m8!3m7!1s0xd2465dfc5a5c7a5:0x478c844fa9edf6eb!2sR.+Fonte+Velha+474,+4460-729+Cust%C3%B3ias!3b1!8m2!3d41.1954163!4d-8.6371579!16s%2Fg%2F11pw1z6jg8!3m5!1s0xd2465dfc53dacab:0x949151ac606fa116!8m2!3d41.1954021!4d-8.6371742!16s%2Fg%2F1tg6lv1z?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" data-en="Open in Google Maps →" data-pt="Abrir no Google Maps →">Abrir no Google Maps →</a></div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg width="22" height="22" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <div>
+              <div class="info-card-title" data-en="Tax ID" data-pt="NIF">NIF</div>
+              <div class="info-card-val">500 048 541</div>
+            </div>
+          </div>
+
+        <!-- Map -->
+        <div class="map-placeholder">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.8!2d-8.69!3d41.19!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDExJzI0LjAiTiA4wrA0MSc0NC4wIlc!5e0!3m2!1spt!2spt!4v1234567890"
+            allowfullscreen=""
+            loading="lazy"
+            title="Localização Brochado & Castro">
+          </iframe>
+        </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <div class="cform-wrap">
+        <div class="cform-section-label" data-en="Send us a <span>Message</span>" data-pt="Envie-nos uma <span>Mensagem</span>">Envie-nos uma <span>Mensagem</span></div>
+        <form class="cform" id="cform">
+          <div class="cform-row">
+            <div class="cform-group">
+              <label class="cform-label" data-en="Full Name *" data-pt="Nome Completo *">Nome Completo *</label>
+              <input class="cform-input" data-en-ph="Your name..." data-pt-ph="O seu nome..." placeholder="O seu nome..." required type="text"/>
+            </div>
+            <div class="cform-group">
+              <label class="cform-label" data-en="Email *" data-pt="E-mail *">E-mail *</label>
+              <input class="cform-input" data-en-ph="your@email.com" data-pt-ph="o-seu@email.pt" placeholder="o-seu@email.pt" required type="email"/>
+            </div>
+          </div>
+          <div class="cform-group">
+            <label class="cform-label" data-en="Phone" data-pt="Telefone">Telefone</label>
+            <input class="cform-input" data-en-ph="+351 ..." data-pt-ph="+351 ..." placeholder="+351 ..." type="tel"/>
+          </div>
+          <div class="cform-group">
+            <label class="cform-label" data-en="Subject" data-pt="Assunto">Assunto</label>
+            <select class="cform-input" style="cursor:pointer;">
+              <option data-en="Select a subject..." data-pt="Selecione um assunto...">Selecione um assunto...</option>
+              <option data-en="Products / Quote" data-pt="Produtos / Orçamento">Produtos / Orçamento</option>
+              <option data-en="Technical Support" data-pt="Suporte Técnico">Suporte Técnico</option>
+              <option data-en="Partnership" data-pt="Parceria">Parceria</option>
+              <option data-en="Other" data-pt="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="cform-group">
+            <label class="cform-label" data-en="Your Message *" data-pt="Mensagem *">Mensagem *</label>
+            <textarea class="cform-input cform-ta" data-en-ph="How can we help you?" data-pt-ph="Como o podemos ajudar?" placeholder="Como o podemos ajudar?" required rows="5"></textarea>
+          </div>
+          <button class="btn-orange cform-submit" data-en="Send Message" data-pt="Enviar Mensagem" type="submit" style="width:100%; justify-content:center; padding:1rem;">Enviar Mensagem</button>
+          <p style="font-size:.78rem; color:var(--grey-400); margin-top:.85rem; text-align:center;" data-en="We typically respond within 24 business hours." data-pt="Respondemos normalmente dentro de 24 horas úteis.">Respondemos normalmente dentro de 24 horas úteis.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="footer-main">
+<div class="container">
+<div class="footer-grid">
+<div class="fcol fcol--brand">
+<a class="footer-logo-link" href="index.html">
+<img alt="B.C.L. Logo" class="footer-logo" src="images/logo_bcl.png"/>
+<span class="footer-brand-name">BROCHADO<span>&amp;</span>CASTRO</span>
+</a>
+<p class="fcol-desc" data-en="Road safety specialists since 1973. Robust moulding and engineering solutions in Matosinhos." data-pt="Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.">Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.</p>
+<p class="fcol-nif" data-en="Tax ID: 500 048 541" data-pt="NIF: 500 048 541">NIF: 500 048 541</p>
+</div>
+<div class="fcol">
+<h4 class="fcol-title" data-en="Contacts &amp; Location" data-pt="Contactos &amp; Localização">Contactos &amp; Localização</h4>
+<ul class="fcol-list">
+<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
+<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
+<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span data-en="Rua Fonte Velha, 474, 4460-729 Matosinhos" data-pt="Rua Fonte Velha, 474, 4460-729 Matosinhos"> Rua Fonte Velha, 474, 4460-729 Matosinhos</span></li>
+</ul>
+</div>
+<div class="fcol">
+<h4 class="fcol-title" data-en="Opening Hours" data-pt="Horário de Funcionamento">Horário de Funcionamento</h4>
+<div class="fhours">
+<div class="fhour-row"><span data-en="Monday – Friday" data-pt="Segunda – Sexta">Segunda – Sexta</span><strong>08h00 – 17h30</strong></div>
+<div class="fhour-row"><span data-en="Saturday &amp; Sunday" data-pt="Sábado e Domingo">Sábado e Domingo</span><strong class="closed" data-en="Closed" data-pt="Encerrado">Encerrado</strong></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bar"><div class="container"><p data-en="© 2026 Brochado &amp; Castro, Lda. All rights reserved." data-pt="© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.">© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.</p></div></div>
+</footer>
+<button class="btt" id="btt"><svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script src="i18n.js"></script><script src="script.js"></script>
+</body>
+</html>

@@ -26,60 +26,35 @@
 </a>
 <nav class="nav-links">
 <a class="nl active" data-en="Home" data-pt="Início" href="index.html">Início</a>
-<a class="nl" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
-<a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
 <a class="nl" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+<a class="nl" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+<a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="nl" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="nl" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
 </nav>
 <div class="nav-right">
 <a class="btn-nav-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
-<div class="lang-dropdown" id="lang-dropdown">
-<button aria-expanded="false" aria-haspopup="listbox" class="lang-dropdown-toggle" id="lang-toggle">
-<span class="lang-label" id="lang-label">PT</span>
-<svg class="lang-chevron" fill="none" viewbox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 3.5L5 6.5L8 3.5" stroke="#6b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
-</button>
-<div class="lang-dropdown-menu" role="listbox">
-<button class="lang-option active" data-lang="pt" role="option">
-<span class="lang-flag"></span> Português
-              <span class="lang-option-check">✓</span>
-</button>
-<button class="lang-option" data-lang="en" role="option">
-<span class="lang-flag"></span> English
-              <span class="lang-option-check">✓</span>
-</button>
-</div>
+<div class="lang-switcher">
+<button class="lang-btn active" data-lang="pt">PT</button>
+<button class="lang-btn" data-lang="en">EN</button>
 </div>
 <button class="burger" id="burger"><span></span><span></span><span></span></button>
 </div>
 </div>
 </header>
-<!-- Mobile Nav -->
 <div class="mobile-overlay" id="mobile-overlay">
 <nav class="mobile-nav">
-<a class="mn-link" data-en="Home" data-pt="Início" href="index.html">Início</a>
-<a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
-<a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="mn-link active" data-en="Home" data-pt="Início" href="index.html">Início</a>
 <a class="mn-link" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+<a class="mn-link" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+<a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="mn-link" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
 <a class="btn-nav-cta mn-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
 <div class="mobile-lang-wrap">
-<div class="lang-dropdown" id="mobile-lang-dropdown">
-<button aria-expanded="false" aria-haspopup="listbox" class="lang-dropdown-toggle" id="mobile-lang-toggle">
-<span class="lang-label" id="mobile-lang-label">PT</span>
-<svg class="lang-chevron" fill="none" viewbox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 3.5L5 6.5L8 3.5" stroke="rgba(255,255,255,0.7)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
-</button>
-<div class="lang-dropdown-menu" role="listbox">
-<button class="lang-option active" data-lang="pt" role="option">
-<span class="lang-flag"></span> Português
-              <span class="lang-option-check">✓</span>
-</button>
-<button class="lang-option" data-lang="en" role="option">
-<span class="lang-flag"></span> English
-              <span class="lang-option-check">✓</span>
-</button>
-</div>
+<div class="lang-switcher">
+<button class="lang-btn active" data-lang="pt">PT</button>
+<button class="lang-btn" data-lang="en">EN</button>
 </div>
 </div>
 </nav>
@@ -87,53 +62,66 @@
 <main>
 <!-- HERO -->
 <section class="hero" id="home">
-<div class="hero-media"><img class="hero-img" src="images/hero_bg.png"/><div class="hero-shade"></div><div class="hero-shade-bottom"></div><div class="hero-accent-bar"></div></div>
+<div class="hero-media">
+<img class="hero-img hero-slide-img active" src="images/hero_bg.png"/>
+<img class="hero-img hero-slide-img" src="images/product_barriers.png"/>
+<img class="hero-img hero-slide-img" src="images/product_plastic_components.png"/>
+<img class="hero-img hero-slide-img" src="images/product_transport_infrastructure.png"/>
+<div class="hero-shade"></div><div class="hero-shade-bottom"></div><div class="hero-accent-bar"></div>
+</div>
 <div class="hero-content">
+<div class="hero-slides-wrap">
+<div class="hero-slide-text active">
 <div class="hero-eyebrow"><span class="eyebrow-dot"></span><span data-en="Road Safety · Since 1973" data-pt="Segurança Rodoviária · Desde 1973">Segurança Rodoviária · Desde 1973</span></div>
 <h1 class="hero-title"><span data-en="PROTECT ROADS." data-pt="PROTEGER ESTRADAS.">PROTEGER ESTRADAS.</span><br/><span class="hero-title-orange" data-en="SAVE LIVES." data-pt="SALVAR VIDAS.">SALVAR VIDAS.</span></h1>
 <p class="hero-desc"><span data-en="Robust manufacturing of plastic components for" data-pt="Fabricação robusta de componentes plásticos e artigos para">Fabricação robusta de componentes plásticos e artigos para</span><br/><span data-en="transport infrastructure in Matosinhos." data-pt="infraestruturas de transporte em Matosinhos.">infraestruturas de transporte em Matosinhos.</span></p>
+</div>
+<div class="hero-slide-text">
+<div class="hero-eyebrow"><span class="eyebrow-dot"></span><span data-en="Containment Solutions" data-pt="Soluções de Contenção">Soluções de Contenção</span></div>
+<h1 class="hero-title"><span data-en="BARRIERS THAT" data-pt="BARREIRAS QUE">BARREIRAS QUE</span><br/><span class="hero-title-orange" data-en="HOLD THE LINE." data-pt="GUARDAM A LINHA.">GUARDAM A LINHA.</span></h1>
+<p class="hero-desc"><span data-en="Fibreglass and thermoplastic barriers for" data-pt="Barreiras em fibra de vidro e termoplástico para">Barreiras em fibra de vidro e termoplástico para</span><br/><span data-en="lane closures, delineation and active signage." data-pt="fecho de vias, delimitação e sinalização ativa.">fecho de vias, delimitação e sinalização ativa.</span></p>
+</div>
+<div class="hero-slide-text">
+<div class="hero-eyebrow"><span class="eyebrow-dot"></span><span data-en="Precision Manufacturing" data-pt="Fabricação de Precisão">Fabricação de Precisão</span></div>
+<h1 class="hero-title"><span data-en="MOULDED FOR" data-pt="MOLDADO PARA">MOLDADO PARA</span><br/><span class="hero-title-orange" data-en="DURABILITY." data-pt="DURABILIDADE.">DURABILIDADE.</span></h1>
+<p class="hero-desc"><span data-en="High-resistance injected plastic components" data-pt="Componentes plásticos injetados de alta resistência">Componentes plásticos injetados de alta resistência</span><br/><span data-en="engineered to withstand decades on the road." data-pt="projetados para décadas de uso nas estradas.">projetados para décadas de uso nas estradas.</span></p>
+</div>
+<div class="hero-slide-text">
+<div class="hero-eyebrow"><span class="eyebrow-dot"></span><span data-en="National Infrastructure" data-pt="Infraestrutura Nacional">Infraestrutura Nacional</span></div>
+<h1 class="hero-title hero-title--lg"><span data-en="BUILDING THE" data-pt="A CONSTRUIR AS">A CONSTRUIR AS</span><br/><span class="hero-title-orange" data-en="ROADS OF PORTUGAL." data-pt="ESTRADAS DE PORTUGAL.">ESTRADAS DE PORTUGAL.</span></h1>
+<p class="hero-desc"><span data-en="Engineering solutions trusted nationwide for" data-pt="Soluções de engenharia de confiança nacional">Soluções de engenharia de confiança nacional</span><br/><span data-en="transport infrastructure since 1973." data-pt="para infraestruturas de transporte desde 1973.">para infraestruturas de transporte desde 1973.</span></p>
+</div>
+</div><!-- /.hero-slides-wrap -->
 <div class="hero-btns">
 <a class="btn-orange" data-en="View Products" data-pt="Ver Produtos" href="produtos.html">Ver Produtos</a>
 <a class="btn-ghost" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
 </div>
+<div class="hero-slide-dots">
+<button class="hero-dot active" data-slide="0"></button>
+<button class="hero-dot" data-slide="1"></button>
+<button class="hero-dot" data-slide="2"></button>
+<button class="hero-dot" data-slide="3"></button>
+</div>
 </div>
 </section>
-<!-- CONTACT SECTION -->
-<section class="section" id="contacto">
+<!-- ABOUT / CERTIFICATES SECTION -->
+<section class="section section--about" id="sobre">
 <div class="container">
-<div class="section-head">
-<div class="sh-tag" data-en="Get in Touch" data-pt="Fale Connosco">Fale Connosco</div>
-<h2 class="sh-title"><span data-en="CONTACT OUR" data-pt="CONTACTE A NOSSA">CONTACTE A NOSSA</span><br/><span class="title-orange" data-en="TEAM" data-pt="EQUIPA">EQUIPA</span></h2>
-<p class="sh-sub" data-en="We are available to answer any questions about our products and services." data-pt="Estamos disponíveis para esclarecer qualquer dúvida sobre os nossos produtos e serviços.">Estamos disponíveis para esclarecer qualquer dúvida sobre os nossos produtos e serviços.</p>
+<div class="about-grid">
+<div class="about-visual">
+<div class="about-img-frame"><img class="about-img" src="images/hero_bg.png"/></div>
+<div class="about-img-tag"><svg fill="none" height="18" stroke="#CC0000" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span data-en="Certified Industrial Facility" data-pt="Unidade Industrial Certificada">Unidade Industrial Certificada</span></div>
+<div class="about-stat-card"><span class="asc-number">50+</span><span class="asc-label"><span data-en="Years of" data-pt="Anos de">Anos de</span><br/><span data-en="Leadership" data-pt="Liderança">Liderança</span></span></div>
 </div>
-<div class="contact-layout">
-<div class="cform-wrap">
-<form class="cform" id="cform">
-<div class="cform-row">
-<div class="cform-group">
-<label class="cform-label" data-en="Full Name *" data-pt="Nome Completo *" style="color: var(--grey-700);">Nome Completo *</label>
-<input class="cform-input" data-en-ph="Your name..." data-pt-ph="O seu nome..." placeholder="O seu nome..." required="" type="text"/>
+<div class="about-text">
+<div class="sh-tag" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</div>
+<h2 class="sh-title at-left"><span data-en="HALF A CENTURY OF" data-pt="MEIO SÉCULO DE">MEIO SÉCULO DE</span><br/><span class="title-orange" data-en="NATIONAL ENGINEERING" data-pt="ENGENHARIA NACIONAL">ENGENHARIA NACIONAL</span></h2>
+<p class="about-p" data-en="Founded in 1973, Brochado &amp; Castro, Lda. has established itself as a reference in Portugal in the plastic moulding and technical engineering sector. Headquartered in Matosinhos, we combine industrial tradition with the most advanced production technologies." data-pt="Fundada em 1973, a Brochado &amp; Castro, Lda. consolidou-se como uma referência em Portugal no setor de moldagem de plásticos e engenharia técnica. Com sede em Matosinhos, combinamos tradição industrial com as mais avançadas tecnologias de produção.">Fundada em 1973, a Brochado &amp; Castro, Lda. consolidou-se como uma referência em Portugal no setor de moldagem de plásticos e engenharia técnica. Com sede em Matosinhos, combinamos tradição industrial com as mais avançadas tecnologias de produção.</p>
+<div class="about-pillars">
+<div class="pillar"><div class="pillar-icon"><svg fill="none" height="20" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><div><strong data-en="Certified Quality" data-pt="Qualidade Certificada">Qualidade Certificada</strong><p data-en="Rigorous production following ISO 9001 and CE standards." data-pt="Produção rigorosa seguindo as normas ISO 9001 e normas CE.">Produção rigorosa seguindo as normas ISO 9001 e normas CE.</p></div></div>
+<div class="pillar"><div class="pillar-icon"><svg fill="none" height="20" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div><div><strong data-en="Road Innovation" data-pt="Inovação Rodoviária">Inovação Rodoviária</strong><p data-en="Constant development of new products for road safety." data-pt="Desenvolvimento constante de novos artigos para a segurança nas estradas.">Desenvolvimento constante de novos artigos para a segurança nas estradas.</p></div></div>
 </div>
-<div class="cform-group">
-<label class="cform-label" data-en="Email *" data-pt="E-mail *" style="color: var(--grey-700);">E-mail *</label>
-<input class="cform-input" data-en-ph="your-email@example.com" data-pt-ph="o-seu-email@exemplo.pt" placeholder="o-seu-email@exemplo.pt" required="" type="email"/>
-</div>
-</div>
-<div class="cform-group">
-<label class="cform-label" data-en="Your Message *" data-pt="Sua Mensagem *" style="color: var(--grey-700);">Sua Mensagem *</label>
-<textarea class="cform-input cform-ta" data-en-ph="How can we help you?" data-pt-ph="Como o podemos ajudar?" placeholder="Como o podemos ajudar?" required="" rows="4"></textarea>
-</div>
-<button class="btn-orange cform-submit" data-en="Send Message" data-pt="Enviar Mensagem" type="submit">Enviar Mensagem</button>
-</form>
-</div>
-<div class="cinfo-col">
-<div class="pcard" style="height:100%; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;">
-<div>
-<h3 class="pcard-title" data-en="Where We Are" data-pt="Onde Estamos" style="margin-bottom:1rem;">Onde Estamos</h3>
-<p class="pcard-desc"><span data-en="Visit our facilities in Matosinhos." data-pt="Visite as nossas instalações em Matosinhos.">Visite as nossas instalações em Matosinhos.</span><br/><span data-en="Fonte Velha, 474, 4460-729." data-pt="Fonte Velha, 474, 4460-729.">Fonte Velha, 474, 4460-729.</span></p>
-<a class="scard-link" href="https://www.google.com/maps/search/?api=1&amp;query=Fonte+Velha+474+4460-729" style="justify-content:center; margin-top:1.5rem;" target="_blank"><span data-en="Open in Google Maps" data-pt="Abrir no Google Maps">Abrir no Google Maps</span><span>→</span></a>
-</div>
-</div>
+<a class="btn-orange" data-en="Learn More About Us" data-pt="Saber Mais Sobre Nós" href="empresa.html" style="margin-top:1.5rem; display:inline-block;">Saber Mais Sobre Nós</a>
 </div>
 </div>
 </div>
@@ -154,9 +142,9 @@
 <div class="fcol">
 <h4 class="fcol-title" data-en="Contacts &amp; Location" data-pt="Contactos &amp; Localização">Contactos &amp; Localização</h4>
 <ul class="fcol-list">
-<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
-<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
-<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span data-en="Rua Fonte Velha, 474, 4460-729 Matosinhos" data-pt="Rua Fonte Velha, 474, 4460-729 Matosinhos"> Rua Fonte Velha, 474, 4460-729 Matosinhos</span></li>
+<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
+<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
+<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span data-en="Rua Fonte Velha, 474, 4460-729 Matosinhos" data-pt="Rua Fonte Velha, 474, 4460-729 Matosinhos"> Rua Fonte Velha, 474, 4460-729 Matosinhos</span></li>
 </ul>
 </div>
 <div class="fcol">

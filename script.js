@@ -7,6 +7,49 @@
 (function () {
   'use strict';
 
+  /* ══════════════════════════════════════════════════
+     HERO SLIDER (Home page)
+     Cycles hero image + headline/text every 10s.
+     Runs first and is self-contained so it is never
+     skipped by an error elsewhere in this file.
+  ══════════════════════════════════════════════════ */
+  try {
+    const heroImgs  = document.querySelectorAll('.hero-slide-img');
+    const heroTexts = document.querySelectorAll('.hero-slide-text');
+    const heroDots  = document.querySelectorAll('.hero-dot');
+
+    if (heroImgs.length > 1) {
+      let heroIdx = 0;
+      const HERO_INTERVAL = 10000;
+      let heroTimer = null;
+
+      const goToSlide = (i) => {
+        heroIdx = i;
+        heroImgs.forEach((img, n) => img.classList.toggle('active', n === heroIdx));
+        heroTexts.forEach((t, n) => t.classList.toggle('active', n === heroIdx));
+        heroDots.forEach((d, n) => d.classList.toggle('active', n === heroIdx));
+      };
+
+      const nextSlide = () => goToSlide((heroIdx + 1) % heroImgs.length);
+
+      const startHeroTimer = () => {
+        clearInterval(heroTimer);
+        heroTimer = setInterval(nextSlide, HERO_INTERVAL);
+      };
+
+      heroDots.forEach((dot, n) => {
+        dot.addEventListener('click', () => {
+          goToSlide(n);
+          startHeroTimer();
+        });
+      });
+
+      startHeroTimer();
+    }
+  } catch (err) {
+    console.error('Hero slider failed to initialise:', err);
+  }
+
   /* ══════════════════════════════════════════════════════
      BILINGUAL PRODUCT DATABASE
      To add a language: add an `xx: { ... }` block
@@ -440,5 +483,8 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
   }, { threshold: 0.05 });
   revealTargets.forEach(el => revealObs.observe(el));
+
+  /* Also observe elements that already have .reveal in HTML (e.g. contactos, noticias) */
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 })();

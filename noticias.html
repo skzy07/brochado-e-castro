@@ -1,16 +1,88 @@
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Especificações do Produto — Brochado &amp; Castro</title>
+<title>Brochado &amp; Castro — Notícias</title>
+<meta content="Brochado &amp; Castro — Notícias e novidades da empresa." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
+<style>
+.news-hero {
+  background: var(--grey-900);
+  padding: calc(var(--nav-h) + 3rem) 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.news-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(204,0,0,.15) 0%, transparent 60%);
+}
+.news-hero .container { position: relative; z-index: 1; }
+
+/* ── Coming soon ── */
+.news-soon { padding: 6rem 0; }
+.news-soon-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.news-soon-inner svg { margin-bottom: 1.5rem; opacity: .85; }
+.news-soon-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1;
+  color: var(--grey-900);
+  letter-spacing: .02em;
+  margin-bottom: 1.25rem;
+}
+.news-soon-sub {
+  font-size: 1.05rem;
+  color: var(--grey-600);
+  line-height: 1.65;
+}
+
+/* ── Newsletter band ── */
+.newsletter-band {
+  background: var(--grey-900);
+  padding: 4rem 0;
+}
+.newsletter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.newsletter-form {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.newsletter-input {
+  padding: .75rem 1.2rem;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+  font-family: inherit;
+  font-size: .9rem;
+  width: 280px;
+  transition: border-color var(--dur);
+}
+.newsletter-input::placeholder { color: rgba(255,255,255,.35); }
+.newsletter-input:focus { outline: none; border-color: var(--orange); }
+</style>
 </head>
-<body id="product-detail-page">
+<body>
 <header class="navbar" id="navbar">
 <div class="nav-container">
 <a class="nav-logo" href="index.html">
@@ -23,7 +95,7 @@
 <nav class="nav-links">
 <a class="nl" data-en="Home" data-pt="Início" href="index.html">Início</a>
 <a class="nl" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
-<a class="nl" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+<a class="nl active" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
 <a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
 <a class="nl" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
 <a class="nl" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
@@ -42,7 +114,7 @@
 <nav class="mobile-nav">
 <a class="mn-link" data-en="Home" data-pt="Início" href="index.html">Início</a>
 <a class="mn-link" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
-<a class="mn-link" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+<a class="mn-link active" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
 <a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
 <a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
 <a class="mn-link" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
@@ -55,19 +127,45 @@
 </div>
 </nav>
 </div>
-<main class="detail-main-container">
-<div class="container">
-<div class="back-link-wrapper">
-<a class="back-to-catalog-btn" href="produtos.html">
-<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><line x1="19" x2="5" y1="12" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg><span data-en="Back to Product Catalogue" data-pt="Voltar ao Catálogo de Produtos">Voltar ao Catálogo de Produtos</span></a>
-</div>
-<!-- Área Dinâmica controlada pelo Script -->
-<div class="detail-layout" id="dynamic-product-content">
-<!-- O JS vai injetar aqui dentro a estrutura de forma limpa -->
-<div data-en="Loading product technical data..." data-pt="A carregar dados técnicos do produto..." style="padding: 4rem 0; text-align: center; color: var(--grey-400);">A carregar dados técnicos do produto...</div>
-</div>
-</div>
+
+<main>
+<!-- HERO -->
+<section class="news-hero">
+  <div class="container">
+    <div class="sh-tag sh-tag--dark" data-en="Latest News" data-pt="Últimas Notícias">Últimas Notícias</div>
+    <h1 class="sh-title sh-title--white" data-en="NEWS &amp; <span class='title-orange'>UPDATES</span>" data-pt="NOTÍCIAS &amp; <span class='title-orange'>ATUALIZAÇÕES</span>">NOTÍCIAS &amp; <span class="title-orange">ATUALIZAÇÕES</span></h1>
+    <p class="sh-sub sh-sub--muted" data-en="Follow the latest news from Brochado &amp; Castro — innovations, projects and milestones." data-pt="Acompanhe as últimas novidades da Brochado &amp; Castro — inovações, projetos e conquistas.">Acompanhe as últimas novidades da Brochado &amp; Castro — inovações, projetos e conquistas.</p>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="section news-soon">
+  <div class="container">
+    <div class="news-soon-inner">
+      <svg width="64" height="64" fill="none" stroke="var(--orange)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2 class="news-soon-title" data-en="COMING SOON" data-pt="EM BREVE">EM BREVE</h2>
+      <p class="news-soon-sub" data-en="We are preparing this section. Our news and updates will be available here shortly." data-pt="Estamos a preparar esta secção. As nossas notícias e novidades estarão disponíveis aqui brevemente.">Estamos a preparar esta secção. As nossas notícias e novidades estarão disponíveis aqui brevemente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-band">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <h3 class="sh-title sh-title--white" style="font-size:1.6rem; margin-bottom:.4rem;" data-en="STAY INFORMED" data-pt="FIQUE INFORMADO">FIQUE INFORMADO</h3>
+        <p style="color:rgba(255,255,255,.5); font-size:.9rem;" data-en="Receive our latest news and product launches directly in your inbox." data-pt="Receba as nossas últimas notícias e lançamentos de produtos diretamente na sua caixa de entrada.">Receba as nossas últimas notícias e lançamentos de produtos diretamente na sua caixa de entrada.</p>
+      </div>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="email" data-pt-ph="O seu e-mail..." data-en-ph="Your email..." placeholder="O seu e-mail..."/>
+        <button class="btn-orange" data-en="Subscribe" data-pt="Subscrever">Subscrever</button>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
+
 <footer class="footer">
 <div class="footer-main">
 <div class="container">
