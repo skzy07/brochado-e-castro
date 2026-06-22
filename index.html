@@ -1,154 +1,177 @@
 <!DOCTYPE html>
+
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brochado & Castro — Início & Contacto</title>
-  <meta name="description" content="Brochado & Castro — Segurança Rodoviária desde 1973. Início e Contactos." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brochado &amp; Castro — Início &amp; Contacto</title>
+<meta content="Brochado &amp; Castro — Segurança Rodoviária desde 1973. Início e Contactos." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- ═══════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
        NAVBAR
   ═══════════════════════════════════════════════ -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo_bcl.png" alt="B.C.L. Logo" class="logo-img">
-        <div class="logo-text-group">
-          <span class="logo-primary">BROCHADO<span class="logo-amp">&</span>CASTRO</span>
-          <span class="logo-sub">SEGURANÇA RODOVIÁRIA</span>
-        </div>
-      </a>
-      <nav class="nav-links">
-        <a href="index.html" class="nl active">Início</a>
-        <a href="produtos.html" class="nl">Produtos</a>
-        <a href="servicos.html" class="nl">Serviços</a>
-        <a href="empresa.html" class="nl">Empresa</a>
-      </nav>
-      <div class="nav-right">
-        <a href="orcamento.html" class="btn-nav-cta">Pedir Orçamento</a>
-        <select id="lang-select" class="lang-select" aria-label="Idioma">
-          <option value="pt">PT</option>
-          <option value="en">EN</option>
-        </select>
-        <button class="burger" id="burger"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Nav -->
-  <div class="mobile-overlay" id="mobile-overlay">
-    <nav class="mobile-nav">
-      <a href="index.html" class="mn-link">Início</a>
-      <a href="produtos.html" class="mn-link">Produtos</a>
-      <a href="servicos.html" class="mn-link">Serviços</a>
-      <a href="empresa.html" class="mn-link">Empresa</a>
-      <a href="orcamento.html" class="btn-nav-cta mn-cta">Pedir Orçamento</a>
-      <div class="mobile-lang-wrap">
-        <select id="mobile-lang-select" class="mobile-lang-select" aria-label="Idioma">
-          <option value="pt">PT</option>
-          <option value="en">EN</option>
-        </select>
-      </div>
-    </nav>
-  </div>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-media"><img src="images/hero_bg.png" class="hero-img" /><div class="hero-shade"></div><div class="hero-shade-bottom"></div><div class="hero-accent-bar"></div></div>
-      <div class="hero-content">
-        <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Segurança Rodoviária · Desde 1973</div>
-        <h1 class="hero-title">PROTEGER ESTRADAS.<br/><span class="hero-title-orange">SALVAR VIDAS.</span></h1>
-        <p class="hero-desc">Fabricação robusta de componentes plásticos e artigos para<br/>infraestruturas de transporte em Matosinhos.</p>
-        <div class="hero-btns">
-          <a href="produtos.html" class="btn-orange">Ver Produtos</a>
-          <a href="orcamento.html" class="btn-ghost">Pedir Orçamento</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="section-head">
-          <div class="sh-tag">Fale Connosco</div>
-          <h2 class="sh-title">CONTACTE A NOSSA<br/><span class="title-orange">EQUIPA</span></h2>
-          <p class="sh-sub">Estamos disponíveis para esclarecer qualquer dúvida sobre os nossos produtos e serviços.</p>
-        </div>
-        <div class="contact-layout">
-          <div class="cform-wrap">
-            <form class="cform" id="cform">
-              <div class="cform-row">
-                <div class="cform-group">
-                  <label class="cform-label" style="color: var(--grey-700);">Nome Completo *</label>
-                  <input type="text" class="cform-input" placeholder="O seu nome..." required />
-                </div>
-                <div class="cform-group">
-                  <label class="cform-label" style="color: var(--grey-700);">E-mail *</label>
-                  <input type="email" class="cform-input" placeholder="o-seu-email@exemplo.pt" required />
-                </div>
-              </div>
-              <div class="cform-group">
-                <label class="cform-label" style="color: var(--grey-700);">Sua Mensagem *</label>
-                <textarea class="cform-input cform-ta" placeholder="Como o podemos ajudar?" rows="4" required></textarea>
-              </div>
-              <button type="submit" class="btn-orange cform-submit">Enviar Mensagem</button>
-            </form>
-          </div>
-          <div class="cinfo-col">
-             <div class="pcard" style="height:100%; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;">
-               <div>
-                 <h3 class="pcard-title" style="margin-bottom:1rem;">Onde Estamos</h3>
-                 <p class="pcard-desc">Visite as nossas instalações em Matosinhos.<br/>Fonte Velha, 474, 4460-729.</p>
-                 <a href="https://www.google.com/maps/search/?api=1&query=Fonte+Velha+474+4460-729" target="_blank" class="scard-link" style="justify-content:center; margin-top:1.5rem;">Abrir no Google Maps <span>→</span></a>
-               </div>
-             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-main">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="fcol fcol--brand">
-            <a href="index.html" class="footer-logo-link">
-              <img src="images/logo_bcl.png" alt="B.C.L. Logo" class="footer-logo">
-              <span class="footer-brand-name">BROCHADO<span>&</span>CASTRO</span>
-            </a>
-            <p class="fcol-desc">Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.</p>
-            <p class="fcol-nif">NIF: 500 048 541</p>
-          </div>
-          <div class="fcol">
-            <h4 class="fcol-title">Contactos & Localização</h4>
-            <ul class="fcol-list">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5BAADB" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5BAADB" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5BAADB" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span> Rua Fonte Velha, 474, 4460-729 Matosinhos</sp an></li>
-            </ul>
-          </div>
-          <div class="fcol">
-            <h4 class="fcol-title">Horário de Funcionamento</h4>
-            <div class="fhours">
-              <div class="fhour-row"><span>Segunda – Sexta</span><strong>08h00 – 17h30</strong></div>
-              <div class="fhour-row"><span>Sábado e Domingo</span><strong class="closed">Encerrado</strong></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bar"><div class="container"><p>© 2026 Brochado & Castro, Lda. Todos os direitos reservados.</p></div></div>
-  </footer>
-
-  <button class="btt" id="btt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
-  <script src="script.js"></script>
+<header class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo" href="index.html">
+<img alt="B.C.L. Logo" class="logo-img" src="images/logo_bcl.png"/>
+<div class="logo-text-group">
+<span class="logo-primary">BROCHADO<span class="logo-amp">&amp;</span>CASTRO</span>
+<span class="logo-sub" data-en="ROAD SAFETY" data-pt="SEGURANÇA RODOVIÁRIA">SEGURANÇA RODOVIÁRIA</span>
+</div>
+</a>
+<nav class="nav-links">
+<a class="nl active" data-en="Home" data-pt="Início" href="index.html">Início</a>
+<a class="nl" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="nl" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+</nav>
+<div class="nav-right">
+<a class="btn-nav-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+<div class="lang-dropdown" id="lang-dropdown">
+<button aria-expanded="false" aria-haspopup="listbox" class="lang-dropdown-toggle" id="lang-toggle">
+<span class="lang-label" id="lang-label">PT</span>
+<svg class="lang-chevron" fill="none" viewbox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 3.5L5 6.5L8 3.5" stroke="#6b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="lang-dropdown-menu" role="listbox">
+<button class="lang-option active" data-lang="pt" role="option">
+<span class="lang-flag"></span> Português
+              <span class="lang-option-check">✓</span>
+</button>
+<button class="lang-option" data-lang="en" role="option">
+<span class="lang-flag"></span> English
+              <span class="lang-option-check">✓</span>
+</button>
+</div>
+</div>
+<button class="burger" id="burger"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<!-- Mobile Nav -->
+<div class="mobile-overlay" id="mobile-overlay">
+<nav class="mobile-nav">
+<a class="mn-link" data-en="Home" data-pt="Início" href="index.html">Início</a>
+<a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="mn-link" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+<a class="btn-nav-cta mn-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+<div class="mobile-lang-wrap">
+<div class="lang-dropdown" id="mobile-lang-dropdown">
+<button aria-expanded="false" aria-haspopup="listbox" class="lang-dropdown-toggle" id="mobile-lang-toggle">
+<span class="lang-label" id="mobile-lang-label">PT</span>
+<svg class="lang-chevron" fill="none" viewbox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 3.5L5 6.5L8 3.5" stroke="rgba(255,255,255,0.7)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="lang-dropdown-menu" role="listbox">
+<button class="lang-option active" data-lang="pt" role="option">
+<span class="lang-flag"></span> Português
+              <span class="lang-option-check">✓</span>
+</button>
+<button class="lang-option" data-lang="en" role="option">
+<span class="lang-flag"></span> English
+              <span class="lang-option-check">✓</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-media"><img class="hero-img" src="images/hero_bg.png"/><div class="hero-shade"></div><div class="hero-shade-bottom"></div><div class="hero-accent-bar"></div></div>
+<div class="hero-content">
+<div class="hero-eyebrow"><span class="eyebrow-dot"></span><span data-en="Road Safety · Since 1973" data-pt="Segurança Rodoviária · Desde 1973">Segurança Rodoviária · Desde 1973</span></div>
+<h1 class="hero-title"><span data-en="PROTECT ROADS." data-pt="PROTEGER ESTRADAS.">PROTEGER ESTRADAS.</span><br/><span class="hero-title-orange" data-en="SAVE LIVES." data-pt="SALVAR VIDAS.">SALVAR VIDAS.</span></h1>
+<p class="hero-desc"><span data-en="Robust manufacturing of plastic components for" data-pt="Fabricação robusta de componentes plásticos e artigos para">Fabricação robusta de componentes plásticos e artigos para</span><br/><span data-en="transport infrastructure in Matosinhos." data-pt="infraestruturas de transporte em Matosinhos.">infraestruturas de transporte em Matosinhos.</span></p>
+<div class="hero-btns">
+<a class="btn-orange" data-en="View Products" data-pt="Ver Produtos" href="produtos.html">Ver Produtos</a>
+<a class="btn-ghost" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+</div>
+</div>
+</section>
+<!-- CONTACT SECTION -->
+<section class="section" id="contacto">
+<div class="container">
+<div class="section-head">
+<div class="sh-tag" data-en="Get in Touch" data-pt="Fale Connosco">Fale Connosco</div>
+<h2 class="sh-title"><span data-en="CONTACT OUR" data-pt="CONTACTE A NOSSA">CONTACTE A NOSSA</span><br/><span class="title-orange" data-en="TEAM" data-pt="EQUIPA">EQUIPA</span></h2>
+<p class="sh-sub" data-en="We are available to answer any questions about our products and services." data-pt="Estamos disponíveis para esclarecer qualquer dúvida sobre os nossos produtos e serviços.">Estamos disponíveis para esclarecer qualquer dúvida sobre os nossos produtos e serviços.</p>
+</div>
+<div class="contact-layout">
+<div class="cform-wrap">
+<form class="cform" id="cform">
+<div class="cform-row">
+<div class="cform-group">
+<label class="cform-label" data-en="Full Name *" data-pt="Nome Completo *" style="color: var(--grey-700);">Nome Completo *</label>
+<input class="cform-input" data-en-ph="Your name..." data-pt-ph="O seu nome..." placeholder="O seu nome..." required="" type="text"/>
+</div>
+<div class="cform-group">
+<label class="cform-label" data-en="Email *" data-pt="E-mail *" style="color: var(--grey-700);">E-mail *</label>
+<input class="cform-input" data-en-ph="your-email@example.com" data-pt-ph="o-seu-email@exemplo.pt" placeholder="o-seu-email@exemplo.pt" required="" type="email"/>
+</div>
+</div>
+<div class="cform-group">
+<label class="cform-label" data-en="Your Message *" data-pt="Sua Mensagem *" style="color: var(--grey-700);">Sua Mensagem *</label>
+<textarea class="cform-input cform-ta" data-en-ph="How can we help you?" data-pt-ph="Como o podemos ajudar?" placeholder="Como o podemos ajudar?" required="" rows="4"></textarea>
+</div>
+<button class="btn-orange cform-submit" data-en="Send Message" data-pt="Enviar Mensagem" type="submit">Enviar Mensagem</button>
+</form>
+</div>
+<div class="cinfo-col">
+<div class="pcard" style="height:100%; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;">
+<div>
+<h3 class="pcard-title" data-en="Where We Are" data-pt="Onde Estamos" style="margin-bottom:1rem;">Onde Estamos</h3>
+<p class="pcard-desc"><span data-en="Visit our facilities in Matosinhos." data-pt="Visite as nossas instalações em Matosinhos.">Visite as nossas instalações em Matosinhos.</span><br/><span data-en="Fonte Velha, 474, 4460-729." data-pt="Fonte Velha, 474, 4460-729.">Fonte Velha, 474, 4460-729.</span></p>
+<a class="scard-link" href="https://www.google.com/maps/search/?api=1&amp;query=Fonte+Velha+474+4460-729" style="justify-content:center; margin-top:1.5rem;" target="_blank"><span data-en="Open in Google Maps" data-pt="Abrir no Google Maps">Abrir no Google Maps</span><span>→</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-main">
+<div class="container">
+<div class="footer-grid">
+<div class="fcol fcol--brand">
+<a class="footer-logo-link" href="index.html">
+<img alt="B.C.L. Logo" class="footer-logo" src="images/logo_bcl.png"/>
+<span class="footer-brand-name">BROCHADO<span>&amp;</span>CASTRO</span>
+</a>
+<p class="fcol-desc" data-en="Road safety specialists since 1973. Robust moulding and engineering solutions in Matosinhos." data-pt="Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.">Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.</p>
+<p class="fcol-nif" data-en="Tax ID: 500 048 541" data-pt="NIF: 500 048 541">NIF: 500 048 541</p>
+</div>
+<div class="fcol">
+<h4 class="fcol-title" data-en="Contacts &amp; Location" data-pt="Contactos &amp; Localização">Contactos &amp; Localização</h4>
+<ul class="fcol-list">
+<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
+<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
+<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span data-en="Rua Fonte Velha, 474, 4460-729 Matosinhos" data-pt="Rua Fonte Velha, 474, 4460-729 Matosinhos"> Rua Fonte Velha, 474, 4460-729 Matosinhos</span></li>
+</ul>
+</div>
+<div class="fcol">
+<h4 class="fcol-title" data-en="Opening Hours" data-pt="Horário de Funcionamento">Horário de Funcionamento</h4>
+<div class="fhours">
+<div class="fhour-row"><span data-en="Monday – Friday" data-pt="Segunda – Sexta">Segunda – Sexta</span><strong>08h00 – 17h30</strong></div>
+<div class="fhour-row"><span data-en="Saturday &amp; Sunday" data-pt="Sábado e Domingo">Sábado e Domingo</span><strong class="closed" data-en="Closed" data-pt="Encerrado">Encerrado</strong></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bar"><div class="container"><p data-en="© 2026 Brochado &amp; Castro, Lda. All rights reserved." data-pt="© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.">© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.</p></div></div>
+</footer>
+<button class="btt" id="btt"><svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script src="i18n.js"></script><script src="script.js"></script>
 </body>
 </html>

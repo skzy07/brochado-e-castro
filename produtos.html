@@ -1,324 +1,334 @@
 <!DOCTYPE html>
+
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brochado & Castro — Produtos</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brochado &amp; Castro — Produtos</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo_bcl.png" alt="B.C.L. Logo" class="logo-img">
-        <div class="logo-text-group">
-          <span class="logo-primary">BROCHADO<span class="logo-amp">&</span>CASTRO</span>
-          <span class="logo-sub">SEGURANÇA RODOVIÁRIA</span>
-        </div>
-      </a>
-      <nav class="nav-links">
-        <a href="index.html" class="nl">Início</a>
-        <a href="produtos.html" class="nl active">Produtos</a>
-        <a href="servicos.html" class="nl">Serviços</a>
-        <a href="empresa.html" class="nl">Empresa</a>
-      </nav>
-      <div class="nav-right">
-        <a href="orcamento.html" class="btn-nav-cta">Pedir Orçamento</a>
-        <select id="lang-select" class="lang-select" aria-label="Idioma">
-          <option value="pt">PT</option>
-          <option value="en">EN</option>
-        </select>
-        <button class="burger" id="burger"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
-  <div class="mobile-overlay" id="mobile-overlay">
-    <nav class="mobile-nav">
-      <a href="index.html" class="mn-link">Início</a>
-      <a href="produtos.html" class="mn-link">Produtos</a>
-      <a href="servicos.html" class="mn-link">Serviços</a>
-      <a href="empresa.html" class="mn-link">Empresa</a>
-      <a href="orcamento.html" class="btn-nav-cta mn-cta">Pedir Orçamento</a>
-      <div class="mobile-lang-wrap">
-        <select id="mobile-lang-select" class="mobile-lang-select" aria-label="Idioma">
-          <option value="pt">PT</option>
-          <option value="en">EN</option>
-        </select>
-      </div>
-    </nav>
-  </div>
-
-  <main>
-    <section class="section section--about" id="produtos">
-      <div class="container">
-        <div class="section-head">
-          <div class="sh-tag">O Nosso Catálogo</div>
-          <h2 class="sh-title">EQUIPAMENTO DE <br/><span class="title-orange">ALTA RESISTÊNCIA</span></h2>
-          <p class="sh-sub">Soluções robustas e certificadas para a sinalização e segurança das vias rodoviárias.</p>
-        </div>
-        
-        <div class="grid-3">
-          
-          <!-- Card 1 -->
-          <a href="produto-detalhe.html?id=1" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_barriers.png" class="pcard-img" alt="Refletores em ABS" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 107</span>
-              <h3 class="pcard-title">Refletores em ABS para Guardas</h3>
-              <p class="pcard-desc">Refletores prismáticos de alta performance para aplicação direta em rails de segurança.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Plástico ABS de alta resistência</li>
-                <li><span class="spec-dot"></span>Três cores de reflexão</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 2 -->
-          <a href="produto-detalhe.html?id=2" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_transport_infrastructure.png" class="pcard-img" alt="Nivelador para Guardas" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 108 / 109</span>
-              <h3 class="pcard-title">Nivelador para Guardas</h3>
-              <p class="pcard-desc">Peça metálica inteiramente galvanizada para suporte estrutural e fixação em prumos modelo U.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Aço com galvanização integral</li>
-                <li><span class="spec-dot"></span>Furação padrão de alta precisão</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 3 -->
-          <a href="produto-detalhe.html?id=3" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/hero_bg.png" class="pcard-img" alt="Baia de Fecho de Via" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 200 / 200-A</span>
-              <h3 class="pcard-title">Baia de Fecho de Via</h3>
-              <p class="pcard-desc">Barreira zebrada em fibra de vidro para bloqueio, corte ou delimitação visual ativa de vias.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Fibra de vidro aditivada contra raios U.V.</li>
-                <li><span class="spec-dot"></span>Disponível em vários comprimentos</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 4 -->
-          <a href="produto-detalhe.html?id=4" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_transport_infrastructure.png" class="pcard-img" alt="Delineador Curto" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 103</span>
-              <h3 class="pcard-title">Delineador Curto Meia-Cana</h3>
-              <p class="pcard-desc">Delineador flexível tipo "BRISA" ideal para barreiras New Jersey e guardas metálicas.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Refletor GUBELA integrado</li>
-                <li><span class="spec-dot"></span>Fixação por ferro galvanizado</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 5 -->
-          <a href="produto-detalhe.html?id=5" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_barriers.png" class="pcard-img" alt="Baia com Lanterna" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 203 / 203a / 203b</span>
-              <h3 class="pcard-title">Baia Bidirecional com Lanterna</h3>
-              <p class="pcard-desc">Painel de alinhamento com sinalização ótica superior e base termoplástica injetada estável.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Material P.E. composto robusto</li>
-                <li><span class="spec-dot"></span>Base disponível em 3 cores</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 6 -->
-          <a href="produto-detalhe.html?id=6" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/hero_bg.png" class="pcard-img" alt="Baias Fixas" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 201 / 202</span>
-              <h3 class="pcard-title">Baias Fixas de Alinhamento</h3>
-              <p class="pcard-desc">Placas verticais sinalizadoras para solo em versões unidirecionais ou bidirecionais.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Dimensões de 1200x300 mm</li>
-                <li><span class="spec-dot"></span>Filmes retrorefletores de alto contraste</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 7 -->
-          <a href="produto-detalhe.html?id=7" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_barriers.png" class="pcard-img" alt="Barreira BCL" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 113 / 114</span>
-              <h3 class="pcard-title">Barreira Anti-Encadeamento BCL</h3>
-              <p class="pcard-desc">Lamelas clássicas em Polipropileno e fibra de vidro para bloqueio de faróis opostos.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Elimina a fadiga visual noturna</li>
-                <li><span class="spec-dot"></span>Para betão ou guardas metálicas</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 8 -->
-          <a href="produto-detalhe.html?id=8" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_transport_infrastructure.png" class="pcard-img" alt="Barreira PE" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 211 a 215</span>
-              <h3 class="pcard-title">Barreira Anti-Encadeamento PE</h3>
-              <p class="pcard-desc">Sistema modular reto fabricado em Polietileno com múltiplos tamanhos para separadores centrais.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Instalação rápida e adaptável</li>
-                <li><span class="spec-dot"></span>Alturas até 1200 mm</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 9 -->
-          <a href="produto-detalhe.html?id=9" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/hero_bg.png" class="pcard-img" alt="Lamela Aerodinâmica" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 208 a 210A</span>
-              <h3 class="pcard-title">Lamela Anti-Encadeamento</h3>
-              <p class="pcard-desc">Variante aerodinâmica com perfil arredondado de alto rendimento estético e funcional.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Polietileno composto premium</li>
-                <li><span class="spec-dot"></span>Excelente comportamento ao vento</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 10 -->
-          <a href="produto-detalhe.html?id=10" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_transport_infrastructure.png" class="pcard-img" alt="Delineador J6 Comprido" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 102-1 / 102-3</span>
-              <h3 class="pcard-title">Delineador Comprido J6</h3>
-              <p class="pcard-desc">Baliza vertical de solo longa (tipo J.A.E.) com faixa preta em PP e refletores de alta precisão.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Refletor GUBELA retangular</li>
-                <li><span class="spec-dot"></span>Opção de refletores circulares no verso</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 11 -->
-          <a href="produto-detalhe.html?id=11" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/product_barriers.png" class="pcard-img" alt="Delineador J6 Curto" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 101-1 / 101-3</span>
-              <h3 class="pcard-title">Delineador Curto J6</h3>
-              <p class="pcard-desc">Delineador compacto com suporte metálico galvanizado para fixação em guardas viárias.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Polietileno branco com proteção U.V.</li>
-                <li><span class="spec-dot"></span>Efeito opcional bidirecional</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-          <!-- Card 12 -->
-          <a href="produto-detalhe.html?id=12" class="pcard">
-            <div class="pcard-img-wrap">
-              <img src="images/hero_bg.png" class="pcard-img" alt="Delineador Meia-Cana Longo" />
-              <div class="pcard-img-overlay"><span class="pcard-cta-hover">Ver Produto</span></div>
-            </div>
-            <div class="pcard-body">
-              <span class="pcard-tag">Ref.ª 104</span>
-              <h3 class="pcard-title">Delineador Longo Meia-Cana</h3>
-              <p class="pcard-desc">Baliza flexível de solo longa (tipo BRISA) com furação integrada para fixação mecânica direta.</p>
-              <ul class="pcard-specs">
-                <li><span class="spec-dot"></span>Faixa moldada a preto em PP</li>
-                <li><span class="spec-dot"></span>Refletor de alta visibilidade 80x120mm</li>
-              </ul>
-              <div class="pcard-btn">Ver Detalhes</div>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-main">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="fcol fcol--brand">
-            <a href="index.html" class="footer-logo-link">
-              <img src="images/logo_bcl.png" alt="B.C.L. Logo" class="footer-logo">
-              <span class="footer-brand-name">BROCHADO<span>&</span>CASTRO</span>
-            </a>
-            <p class="fcol-desc">Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.</p>
-            <p class="fcol-nif">NIF: 500 048 541</p>
-          </div>
-          <div class="fcol">
-            <h4 class="fcol-title">Contactos & Localização</h4>
-            <ul class="fcol-list">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5BAADB" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5BAADB" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5BAADB" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Rua Fonte Velha, 474, 4460-729 Matosinhos</span></li>
-            </ul>
-          </div>
-          <div class="fcol">
-            <h4 class="fcol-title">Horário de Funcionamento</h4>
-            <div class="fhours">
-              <div class="fhour-row"><span>Segunda – Sexta</span><strong>08h00 – 17h30</strong></div>
-              <div class="fhour-row"><span>Sábado e Domingo</span><strong class="closed">Encerrado</strong></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bar"><div class="container"><p>© 2026 Brochado & Castro, Lda. Todos os direitos reservados.</p></div></div>
-  </footer>
-
-  <button class="btt" id="btt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
-  <script src="script.js"></script>
+<header class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo" href="index.html">
+<img alt="B.C.L. Logo" class="logo-img" src="images/logo_bcl.png"/>
+<div class="logo-text-group">
+<span class="logo-primary">BROCHADO<span class="logo-amp">&amp;</span>CASTRO</span>
+<span class="logo-sub" data-en="ROAD SAFETY" data-pt="SEGURANÇA RODOVIÁRIA">SEGURANÇA RODOVIÁRIA</span>
+</div>
+</a>
+<nav class="nav-links">
+<a class="nl" data-en="Home" data-pt="Início" href="index.html">Início</a>
+<a class="nl active" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="nl" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+</nav>
+<div class="nav-right">
+<a class="btn-nav-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+<div class="lang-dropdown" id="lang-dropdown">
+<button aria-expanded="false" aria-haspopup="listbox" class="lang-dropdown-toggle" id="lang-toggle">
+<span class="lang-label" id="lang-label">PT</span>
+<svg class="lang-chevron" fill="none" viewbox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 3.5L5 6.5L8 3.5" stroke="#6b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="lang-dropdown-menu" role="listbox">
+<button class="lang-option active" data-lang="pt" role="option">
+<span class="lang-flag"></span> Português
+              <span class="lang-option-check">✓</span>
+</button>
+<button class="lang-option" data-lang="en" role="option">
+<span class="lang-flag"></span> English
+              <span class="lang-option-check">✓</span>
+</button>
+</div>
+</div>
+<button class="burger" id="burger"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<div class="mobile-overlay" id="mobile-overlay">
+<nav class="mobile-nav">
+<a class="mn-link" data-en="Home" data-pt="Início" href="index.html">Início</a>
+<a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+<a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+<a class="mn-link" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+<a class="btn-nav-cta mn-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+<div class="mobile-lang-wrap">
+<div class="lang-dropdown" id="mobile-lang-dropdown">
+<button aria-expanded="false" aria-haspopup="listbox" class="lang-dropdown-toggle" id="mobile-lang-toggle">
+<span class="lang-label" id="mobile-lang-label">PT</span>
+<svg class="lang-chevron" fill="none" viewbox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 3.5L5 6.5L8 3.5" stroke="rgba(255,255,255,0.7)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="lang-dropdown-menu" role="listbox">
+<button class="lang-option active" data-lang="pt" role="option">
+<span class="lang-flag"></span> Português
+              <span class="lang-option-check">✓</span>
+</button>
+<button class="lang-option" data-lang="en" role="option">
+<span class="lang-flag"></span> English
+              <span class="lang-option-check">✓</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<main>
+<section class="section section--about" id="produtos">
+<div class="container">
+<div class="section-head">
+<div class="sh-tag" data-en="Our Catalogue" data-pt="O Nosso Catálogo">O Nosso Catálogo</div>
+<h2 class="sh-title"><span data-en="HIGH-DURABILITY" data-pt="EQUIPAMENTO DE">EQUIPAMENTO DE</span><br/><span class="title-orange" data-en="EQUIPMENT" data-pt="ALTA RESISTÊNCIA">ALTA RESISTÊNCIA</span></h2>
+<p class="sh-sub" data-en="Robust, certified solutions for road signage and safety." data-pt="Soluções robustas e certificadas para a sinalização e segurança das vias rodoviárias.">Soluções robustas e certificadas para a sinalização e segurança das vias rodoviárias.</p>
+</div>
+<div class="grid-3">
+<!-- Card 1 -->
+<a class="pcard" href="produto-detalhe.html?id=1">
+<div class="pcard-img-wrap">
+<img alt="Refletores em ABS" class="pcard-img" src="images/product_barriers.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 107</span>
+<h3 class="pcard-title" data-en="ABS Reflectors for Guardrails" data-pt="Refletores em ABS para Guardas">Refletores em ABS para Guardas</h3>
+<p class="pcard-desc" data-en="High-performance prismatic reflectors for direct application on safety rails." data-pt="Refletores prismáticos de alta performance para aplicação direta em rails de segurança.">Refletores prismáticos de alta performance para aplicação direta em rails de segurança.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="High-strength ABS plastic" data-pt="Plástico ABS de alta resistência">Plástico ABS de alta resistência</span></li>
+<li><span class="spec-dot"></span><span data-en="Three reflection colours" data-pt="Três cores de reflexão">Três cores de reflexão</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="pcard" href="produto-detalhe.html?id=2">
+<div class="pcard-img-wrap">
+<img alt="Nivelador para Guardas" class="pcard-img" src="images/product_transport_infrastructure.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 108 / 109</span>
+<h3 class="pcard-title" data-en="Guardrail Leveller" data-pt="Nivelador para Guardas">Nivelador para Guardas</h3>
+<p class="pcard-desc" data-en="Fully galvanised metal part for structural support and fixing on U-model posts." data-pt="Peça metálica inteiramente galvanizada para suporte estrutural e fixação em prumos modelo U.">Peça metálica inteiramente galvanizada para suporte estrutural e fixação em prumos modelo U.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Fully galvanised steel" data-pt="Aço com galvanização integral">Aço com galvanização integral</span></li>
+<li><span class="spec-dot"></span><span data-en="High-precision standard drilling" data-pt="Furação padrão de alta precisão">Furação padrão de alta precisão</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="pcard" href="produto-detalhe.html?id=3">
+<div class="pcard-img-wrap">
+<img alt="Baia de Fecho de Via" class="pcard-img" src="images/hero_bg.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 200 / 200-A</span>
+<h3 class="pcard-title" data-en="Lane Closure Barrier" data-pt="Baia de Fecho de Via">Baia de Fecho de Via</h3>
+<p class="pcard-desc" data-en="Fibreglass chevron barrier for blocking, cutting off, or actively delimiting lanes." data-pt="Barreira zebrada em fibra de vidro para bloqueio, corte ou delimitação visual ativa de vias.">Barreira zebrada em fibra de vidro para bloqueio, corte ou delimitação visual ativa de vias.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="U.V.-resistant additised fibreglass" data-pt="Fibra de vidro aditivada contra raios U.V.">Fibra de vidro aditivada contra raios U.V.</span></li>
+<li><span class="spec-dot"></span><span data-en="Available in several lengths" data-pt="Disponível em vários comprimentos">Disponível em vários comprimentos</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="pcard" href="produto-detalhe.html?id=4">
+<div class="pcard-img-wrap">
+<img alt="Delineador Curto" class="pcard-img" src="images/product_transport_infrastructure.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 103</span>
+<h3 class="pcard-title" data-en="Short Half-Round Delineator" data-pt="Delineador Curto Meia-Cana">Delineador Curto Meia-Cana</h3>
+<p class="pcard-desc" data-en='Flexible "BRISA" type delineator, ideal for New Jersey barriers and metal guardrails.' data-pt='Delineador flexível tipo "BRISA" ideal para barreiras New Jersey e guardas metálicas.'>Delineador flexível tipo "BRISA" ideal para barreiras New Jersey e guardas metálicas.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Integrated GUBELA reflector" data-pt="Refletor GUBELA integrado">Refletor GUBELA integrado</span></li>
+<li><span class="spec-dot"></span><span data-en="Fixed with galvanised iron bracket" data-pt="Fixação por ferro galvanizado">Fixação por ferro galvanizado</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 5 -->
+<a class="pcard" href="produto-detalhe.html?id=5">
+<div class="pcard-img-wrap">
+<img alt="Baia com Lanterna" class="pcard-img" src="images/product_barriers.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 203 / 203a / 203b</span>
+<h3 class="pcard-title" data-en="Bidirectional Marker with Beacon" data-pt="Baia Bidirecional com Lanterna">Baia Bidirecional com Lanterna</h3>
+<p class="pcard-desc" data-en="Alignment panel with upper optical signalling and a stable injected thermoplastic base." data-pt="Painel de alinhamento com sinalização ótica superior e base termoplástica injetada estável.">Painel de alinhamento com sinalização ótica superior e base termoplástica injetada estável.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Robust composite P.E. material" data-pt="Material P.E. composto robusto">Material P.E. composto robusto</span></li>
+<li><span class="spec-dot"></span><span data-en="Base available in 3 colours" data-pt="Base disponível em 3 cores">Base disponível em 3 cores</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 6 -->
+<a class="pcard" href="produto-detalhe.html?id=6">
+<div class="pcard-img-wrap">
+<img alt="Baias Fixas" class="pcard-img" src="images/hero_bg.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 201 / 202</span>
+<h3 class="pcard-title" data-en="Fixed Alignment Markers" data-pt="Baias Fixas de Alinhamento">Baias Fixas de Alinhamento</h3>
+<p class="pcard-desc" data-en="Vertical ground signage panels in unidirectional or bidirectional versions." data-pt="Placas verticais sinalizadoras para solo em versões unidirecionais ou bidirecionais.">Placas verticais sinalizadoras para solo em versões unidirecionais ou bidirecionais.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Dimensions 1200×300 mm" data-pt="Dimensões de 1200x300 mm">Dimensões de 1200x300 mm</span></li>
+<li><span class="spec-dot"></span><span data-en="High-contrast retroreflective film" data-pt="Filmes retrorefletores de alto contraste">Filmes retrorefletores de alto contraste</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 7 -->
+<a class="pcard" href="produto-detalhe.html?id=7">
+<div class="pcard-img-wrap">
+<img alt="Barreira BCL" class="pcard-img" src="images/product_barriers.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 113 / 114</span>
+<h3 class="pcard-title" data-en="BCL Anti-Glare Barrier" data-pt="Barreira Anti-Encadeamento BCL">Barreira Anti-Encadeamento BCL</h3>
+<p class="pcard-desc" data-en="Classic Polypropylene and fibreglass slats to block oncoming headlights." data-pt="Lamelas clássicas em Polipropileno e fibra de vidro para bloqueio de faróis opostos.">Lamelas clássicas em Polipropileno e fibra de vidro para bloqueio de faróis opostos.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Eliminates night-time eye fatigue" data-pt="Elimina a fadiga visual noturna">Elimina a fadiga visual noturna</span></li>
+<li><span class="spec-dot"></span><span data-en="For concrete or metal guardrails" data-pt="Para betão ou guardas metálicas">Para betão ou guardas metálicas</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 8 -->
+<a class="pcard" href="produto-detalhe.html?id=8">
+<div class="pcard-img-wrap">
+<img alt="Barreira PE" class="pcard-img" src="images/product_transport_infrastructure.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 211 a 215</span>
+<h3 class="pcard-title" data-en="PE Anti-Glare Barrier" data-pt="Barreira Anti-Encadeamento PE">Barreira Anti-Encadeamento PE</h3>
+<p class="pcard-desc" data-en="Straight modular system made of Polyethylene, available in multiple sizes for central reservations." data-pt="Sistema modular reto fabricado em Polietileno com múltiplos tamanhos para separadores centrais.">Sistema modular reto fabricado em Polietileno com múltiplos tamanhos para separadores centrais.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Fast, adaptable installation" data-pt="Instalação rápida e adaptável">Instalação rápida e adaptável</span></li>
+<li><span class="spec-dot"></span><span data-en="Heights up to 1200 mm" data-pt="Alturas até 1200 mm">Alturas até 1200 mm</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 9 -->
+<a class="pcard" href="produto-detalhe.html?id=9">
+<div class="pcard-img-wrap">
+<img alt="Lamela Aerodinâmica" class="pcard-img" src="images/hero_bg.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 208 a 210A</span>
+<h3 class="pcard-title" data-en="Anti-Glare Slat" data-pt="Lamela Anti-Encadeamento">Lamela Anti-Encadeamento</h3>
+<p class="pcard-desc" data-en="Aerodynamic variant with a rounded profile for high aesthetic and functional performance." data-pt="Variante aerodinâmica com perfil arredondado de alto rendimento estético e funcional.">Variante aerodinâmica com perfil arredondado de alto rendimento estético e funcional.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Premium composite Polyethylene" data-pt="Polietileno composto premium">Polietileno composto premium</span></li>
+<li><span class="spec-dot"></span><span data-en="Excellent wind behaviour" data-pt="Excelente comportamento ao vento">Excelente comportamento ao vento</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 10 -->
+<a class="pcard" href="produto-detalhe.html?id=10">
+<div class="pcard-img-wrap">
+<img alt="Delineador J6 Comprido" class="pcard-img" src="images/product_transport_infrastructure.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 102-1 / 102-3</span>
+<h3 class="pcard-title" data-en="Long J6 Delineator" data-pt="Delineador Comprido J6">Delineador Comprido J6</h3>
+<p class="pcard-desc" data-en="Long vertical ground marker post (J.A.E. type) with a black PP stripe and high-precision reflectors." data-pt="Baliza vertical de solo longa (tipo J.A.E.) com faixa preta em PP e refletores de alta precisão.">Baliza vertical de solo longa (tipo J.A.E.) com faixa preta em PP e refletores de alta precisão.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Rectangular GUBELA reflector" data-pt="Refletor GUBELA retangular">Refletor GUBELA retangular</span></li>
+<li><span class="spec-dot"></span><span data-en="Optional circular reflectors on the reverse" data-pt="Opção de refletores circulares no verso">Opção de refletores circulares no verso</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 11 -->
+<a class="pcard" href="produto-detalhe.html?id=11">
+<div class="pcard-img-wrap">
+<img alt="Delineador J6 Curto" class="pcard-img" src="images/product_barriers.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 101-1 / 101-3</span>
+<h3 class="pcard-title" data-en="Short J6 Delineator" data-pt="Delineador Curto J6">Delineador Curto J6</h3>
+<p class="pcard-desc" data-en="Compact delineator with a galvanised metal bracket for fixing onto road guardrails." data-pt="Delineador compacto com suporte metálico galvanizado para fixação em guardas viárias.">Delineador compacto com suporte metálico galvanizado para fixação em guardas viárias.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="White U.V.-protected Polyethylene" data-pt="Polietileno branco com proteção U.V.">Polietileno branco com proteção U.V.</span></li>
+<li><span class="spec-dot"></span><span data-en="Optional bidirectional effect" data-pt="Efeito opcional bidirecional">Efeito opcional bidirecional</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+<!-- Card 12 -->
+<a class="pcard" href="produto-detalhe.html?id=12">
+<div class="pcard-img-wrap">
+<img alt="Delineador Meia-Cana Longo" class="pcard-img" src="images/hero_bg.png"/>
+<div class="pcard-img-overlay"><span class="pcard-cta-hover" data-en="View Product" data-pt="Ver Produto">Ver Produto</span></div>
+</div>
+<div class="pcard-body">
+<span class="pcard-tag">Ref.ª 104</span>
+<h3 class="pcard-title" data-en="Long Half-Round Delineator" data-pt="Delineador Longo Meia-Cana">Delineador Longo Meia-Cana</h3>
+<p class="pcard-desc" data-en="Long flexible ground marker post (BRISA type) with integrated drilling for direct mechanical fixing." data-pt="Baliza flexível de solo longa (tipo BRISA) com furação integrada para fixação mecânica direta.">Baliza flexível de solo longa (tipo BRISA) com furação integrada para fixação mecânica direta.</p>
+<ul class="pcard-specs">
+<li><span class="spec-dot"></span><span data-en="Black-moulded PP stripe" data-pt="Faixa moldada a preto em PP">Faixa moldada a preto em PP</span></li>
+<li><span class="spec-dot"></span><span data-en="High-visibility 80×120 mm reflector" data-pt="Refletor de alta visibilidade 80x120mm">Refletor de alta visibilidade 80x120mm</span></li>
+</ul>
+<div class="pcard-btn" data-en="View Details" data-pt="Ver Detalhes">Ver Detalhes</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-main">
+<div class="container">
+<div class="footer-grid">
+<div class="fcol fcol--brand">
+<a class="footer-logo-link" href="index.html">
+<img alt="B.C.L. Logo" class="footer-logo" src="images/logo_bcl.png"/>
+<span class="footer-brand-name">BROCHADO<span>&amp;</span>CASTRO</span>
+</a>
+<p class="fcol-desc" data-en="Road safety specialists since 1973. Robust moulding and engineering solutions in Matosinhos." data-pt="Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.">Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.</p>
+<p class="fcol-nif" data-en="Tax ID: 500 048 541" data-pt="NIF: 500 048 541">NIF: 500 048 541</p>
+</div>
+<div class="fcol">
+<h4 class="fcol-title" data-en="Contacts &amp; Location" data-pt="Contactos &amp; Localização">Contactos &amp; Localização</h4>
+<ul class="fcol-list">
+<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
+<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
+<li><svg fill="none" height="14" stroke="#5BAADB" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span data-en="Rua Fonte Velha, 474, 4460-729 Matosinhos" data-pt="Rua Fonte Velha, 474, 4460-729 Matosinhos">Rua Fonte Velha, 474, 4460-729 Matosinhos</span></li>
+</ul>
+</div>
+<div class="fcol">
+<h4 class="fcol-title" data-en="Opening Hours" data-pt="Horário de Funcionamento">Horário de Funcionamento</h4>
+<div class="fhours">
+<div class="fhour-row"><span data-en="Monday – Friday" data-pt="Segunda – Sexta">Segunda – Sexta</span><strong>08h00 – 17h30</strong></div>
+<div class="fhour-row"><span data-en="Saturday &amp; Sunday" data-pt="Sábado e Domingo">Sábado e Domingo</span><strong class="closed" data-en="Closed" data-pt="Encerrado">Encerrado</strong></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bar"><div class="container"><p data-en="© 2026 Brochado &amp; Castro, Lda. All rights reserved." data-pt="© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.">© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.</p></div></div>
+</footer>
+<button class="btt" id="btt"><svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script src="i18n.js"></script><script src="script.js"></script>
 </body>
 </html>
