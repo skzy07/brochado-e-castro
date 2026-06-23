@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="utf-8"/>
@@ -7,113 +6,2051 @@
 <title>Brochado &amp; Castro — Empresa</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ====================================================
+   BROCHADO & CASTRO — Road Safety
+   Palette: #CC0000 (orange) · #3D3D3D / #1A1A1A (grey)
+            #FFFFFF (white) · var(--orange) (light blue icons)
+   Font: Anton (headings) · Inter (body)
+==================================================== */
+
+/* ── Variables ──────────────────────────────────── */
+:root {
+  --orange:        #CC0000;
+  --orange-dark:   #AA0000;
+  --orange-light:  #FF2222;
+  --orange-pale:   rgba(204,0,0,.08);
+
+  --grey-900:  #1A1A1A;
+  --grey-800:  #2A2A2A;
+  --grey-700:  #3D3D3D;
+  --grey-600:  #555555;
+  --grey-400:  #888888;
+  --grey-200:  #D9D9D9;
+  --grey-100:  #F2F2F2;
+  --grey-50:   #F8F8F8;
+
+  --white:     #FFFFFF;
+  --blue-icon: #CC0000;
+
+  --font-display: 'Anton', Impact, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --nav-h:     72px;
+  --topbar-h:  38px;
+  --full-h:    calc(var(--nav-h) + var(--topbar-h));
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-card: 0 2px 16px rgba(0,0,0,.08);
+  --shadow-lift: 0 8px 32px rgba(0,0,0,.14);
+  --shadow-deep: 0 16px 48px rgba(0,0,0,.18);
+
+  --ease: cubic-bezier(0.16,1,0.3,1);
+  --dur:  280ms;
+}
+
+/* ── Reset ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:calc(var(--topbar-h) + var(--nav-h) + 16px); -webkit-text-size-adjust:100%; }
+body { font-family:var(--font-body); color:var(--grey-800); background:var(--white); overflow-x:hidden; line-height:1.6; -webkit-font-smoothing:antialiased; }
+img { display:block; max-width:100%; height:auto; }
+a  { color:inherit; text-decoration:none; }
+ul { list-style:none; }
+button { font-family:inherit; cursor:pointer; border:none; background:none; padding:0; }
+
+/* ── Layout ─────────────────────────────────────── */
+.container { max-width:1200px; margin:0 auto; padding:0 clamp(1.25rem,5vw,2rem); }
+
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+
+/* ── Typography helpers ─────────────────────────── */
+.sh-tag {
+  display:inline-flex; align-items:center; gap:.45rem;
+  font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--grey-600);
+  border:1px solid var(--grey-200);
+  padding:.3rem .85rem;
+  border-radius:var(--radius-sm);
+  margin-bottom:1rem;
+}
+.sh-tag--dark { border-color:rgba(255,255,255,.15); color:rgba(255,255,255,.55); }
+
+.sh-title {
+  font-family:var(--font-display);
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.08;
+  letter-spacing:.01em;
+  color:var(--grey-900);
+  margin-bottom:1rem;
+  text-transform:uppercase;
+}
+.sh-title--white { color:var(--white); }
+.at-left { text-align:left; }
+
+.title-orange { color:var(--orange); }
+
+.sh-sub {
+  font-size:1rem; color:var(--grey-600); max-width:580px; margin:0 auto; line-height:1.7;
+}
+.sh-sub--muted { color:rgba(255,255,255,.5); }
+
+.section-head { text-align:center; margin-bottom:3.5rem; }
+
+/* ── Buttons ────────────────────────────────────── */
+.btn-orange, .btn-ghost, .btn-nav-cta {
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-family:var(--font-body); font-weight:600; font-size:.93rem;
+  padding:.78rem 1.6rem;
+  border-radius:var(--radius-sm);
+  transition:all var(--dur) var(--ease);
+  cursor:pointer; white-space:nowrap;
+}
+
+.btn-orange {
+  background:var(--orange); color:var(--white);
+  box-shadow:0 4px 18px rgba(204,0,0,.35);
+}
+.btn-orange:hover { background:var(--orange-dark); transform:translateY(-2px); box-shadow:0 8px 28px rgba(204,0,0,.45); }
+.btn-orange:active { transform:translateY(0); }
+
+.btn-ghost {
+  background:transparent; color:var(--white);
+  border:1.5px solid rgba(255,255,255,.45);
+}
+.btn-ghost:hover { background:rgba(255,255,255,.1); border-color:var(--white); transform:translateY(-2px); }
+
+.btn-nav-cta {
+  background:var(--orange); color:var(--white);
+  font-size:.84rem; padding:.58rem 1.2rem;
+  box-shadow:0 3px 12px rgba(204,0,0,.3);
+}
+.btn-nav-cta:hover { background:var(--orange-dark); transform:translateY(-1px); }
+
+/* ── Language switcher (inline side-by-side) ── */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--grey-200);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--grey-100);
+  gap: 0;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .38rem .72rem;
+  font-family: inherit;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--grey-500, #777);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--dur), color var(--dur);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.lang-btn:hover { color: var(--grey-900); }
+
+.lang-btn.active {
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 3px;
+}
+
+.lang-flag { font-size: .9rem; line-height: 1; }
+
+/* Mobile lang switcher */
+.mobile-lang-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.mobile-lang-wrap .lang-switcher {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.25);
+}
+
+.mobile-lang-wrap .lang-btn {
+  color: rgba(255,255,255,.65);
+}
+
+.mobile-lang-wrap .lang-btn:hover { color: var(--white); }
+
+.mobile-lang-wrap .lang-btn.active {
+  background: var(--orange);
+  color: var(--white);
+}
+
+@media (max-width: 860px) {
+  .nav-right .lang-switcher { display: none; }
+}
+
+/* ── NAVBAR ─────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-h);
+  background: var(--white);
+  border-bottom: 1px solid var(--grey-200);
+  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  transition: all var(--dur) var(--ease);
+}
+
+.nav-container {
+  max-width:1200px; margin:0 auto;
+  padding:0 clamp(1.25rem,5vw,2rem);
+  height:100%;
+  display:flex; align-items:center; gap:2rem;
+}
+
+/* Logo */
+.nav-logo { display:flex; align-items:center; gap:.85rem; flex-shrink:0; }
+.logo-img { height: 42px; width: auto; max-width: 140px; object-fit: contain; }
+
+.logo-text-group { display:flex; flex-direction:column; line-height:1; }
+.logo-primary {
+  font-family:var(--font-display);
+  font-size:1.25rem; letter-spacing:.04em;
+  color:var(--grey-900);
+}
+.logo-amp { color:var(--orange); margin:0 .05em; }
+.logo-sub {
+  font-size:.6rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--grey-400); font-weight:600; margin-top:.2rem;
+}
+
+/* Nav links */
+.nav-links { display:flex; align-items:center; gap:.1rem; margin:0 auto; }
+.nl {
+  font-size:.88rem; font-weight:500;
+  color:var(--grey-600);
+  padding:.5rem .9rem;
+  border-radius:var(--radius-sm);
+  transition:color var(--dur), background var(--dur);
+  position:relative;
+}
+.nl::after {
+  content:'';
+  position:absolute; bottom:2px; left:.9rem; right:.9rem;
+  height:2px; background:var(--orange);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform var(--dur) var(--ease);
+  border-radius:1px;
+}
+.nl:hover, .nl.active { color:var(--grey-900); }
+.nl:hover::after, .nl.active::after { transform:scaleX(1); }
+
+/* Nav right */
+.nav-right { display:flex; align-items:center; gap:.75rem; flex-shrink:0; }
+
+/* Burger */
+.burger {
+  display:none; flex-direction:column; gap:5px;
+  padding:.5rem; border-radius:var(--radius-sm);
+  transition:background var(--dur);
+}
+.burger:hover { background:var(--grey-100); }
+.burger span { display:block; width:22px; height:2px; background:var(--grey-700); border-radius:1px; transition:all var(--dur) var(--ease); }
+.burger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.burger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* Mobile overlay */
+.mobile-overlay {
+  display:none;
+  position:fixed; inset:0; top:var(--nav-h);
+  background:var(--grey-900);
+  z-index:999;
+  opacity:0; pointer-events:none;
+  transition:opacity var(--dur) var(--ease);
+}
+.mobile-overlay.open { opacity:1; pointer-events:all; }
+
+.mobile-nav {
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:.5rem;
+  height:100%; padding:2rem;
+}
+.mn-link {
+  font-family:var(--font-display); font-size:2rem; letter-spacing:.06em;
+  color:rgba(255,255,255,.7);
+  padding:.6rem 2rem; border-radius:var(--radius-sm);
+  transition:color var(--dur); text-transform:uppercase;
+}
+.mn-link:hover { color:var(--orange); }
+.mn-cta { margin-top:1.5rem; font-family:var(--font-body); font-size:1rem !important; }
+
+/* ── HERO ───────────────────────────────────────── */
+.hero {
+  position:relative;
+  min-height:100svh;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+
+.hero-media { position:absolute; inset:0; }
+.hero-img {
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  position:absolute; inset:0;
+  opacity:0;
+  transition:opacity 1.2s ease;
+  animation:heroZoom 20s ease-in-out infinite alternate;
+  animation-play-state:paused;
+}
+.hero-img.active { opacity:1; animation-play-state:running; }
+@keyframes heroZoom { from { transform:scale(1.03); } to { transform:scale(1.1); } }
+
+.hero-shade {
+  position:absolute; inset:0;
+  background:linear-gradient(108deg, rgba(26,26,26,.92) 0%, rgba(26,26,26,.72) 55%, rgba(26,26,26,.4) 100%);
+}
+.hero-shade-bottom {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(26,26,26,.75) 0%, transparent 45%);
+}
+
+/* Orange vertical accent bar */
+.hero-accent-bar {
+  position:absolute;
+  top:0; left:0;
+  width:5px;
+  height:100%;
+  background:var(--orange);
+}
+
+/* Hero content */
+.hero-content {
+  position:relative; z-index:1;
+  max-width:860px;
+  padding:clamp(2rem,5vw,4rem);
+  padding-top:calc(var(--full-h) + 2rem);
+}
+
+/* Wrapper — grid stacking: todos os slides na mesma célula, layout nunca muda */
+.hero-slides-wrap {
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:1fr;
+  margin-bottom:2rem;
+}
+
+/* Todos os slides empilhados na célula 1/1 */
+.hero-slide-text {
+  grid-area:1/1;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .8s var(--ease);
+  visibility:hidden;
+}
+.hero-slide-text.active {
+  opacity:1;
+  pointer-events:auto;
+  visibility:visible;
+  animation:heroTextFade .8s var(--ease) both;
+}
+@keyframes heroTextFade { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-size:.75rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+  margin-bottom:1.5rem;
+  animation:fadeUp .8s var(--ease) both;
+}
+.eyebrow-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--orange);
+  box-shadow:0 0 0 3px rgba(204,0,0,.3);
+  animation:pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 3px rgba(204,0,0,.3);} 50%{box-shadow:0 0 0 7px rgba(204,0,0,.07);} }
+
+.hero-title {
+  font-family:var(--font-display);
+  font-size:clamp(2.4rem,5.5vw,4.8rem);
+  line-height:1.05;
+  letter-spacing:.02em;
+  color:var(--white);
+  margin-bottom:1.25rem;
+  text-transform:uppercase;
+  animation:fadeUp .9s .12s var(--ease) both;
+}
+/* Títulos mais longos — reduz automaticamente para caber em 2 linhas */
+.hero-title--lg {
+  font-size:clamp(2rem,4.5vw,4rem);
+}
+.hero-title-orange { color:var(--orange); }
+
+.hero-desc {
+  font-size:clamp(.95rem,2vw,1.1rem);
+  color:rgba(255,255,255,.68);
+  line-height:1.75;
+  margin-bottom:2rem;
+  animation:fadeUp .9s .24s var(--ease) both;
+}
+
+.hero-btns {
+  display:flex; gap:1rem; flex-wrap:wrap;
+  margin-bottom:3rem;
+  animation:fadeUp .9s .36s var(--ease) both;
+}
+.hero-btns .btn-orange, .hero-btns .btn-ghost { padding:.85rem 2rem; font-size:1rem; }
+
+/* Hero slide dots */
+.hero-slide-dots {
+  display:flex; gap:.6rem;
+  margin-top:-1.5rem;
+  margin-bottom:2.5rem;
+}
+.hero-dot {
+  width:28px; height:4px;
+  border:none; padding:0;
+  background:rgba(255,255,255,.25);
+  border-radius:2px;
+  cursor:pointer;
+  transition:background var(--dur) var(--ease);
+}
+.hero-dot.active { background:var(--orange); }
+.hero-dot:hover { background:rgba(255,255,255,.5); }
+
+/* Hero KPIs */
+.hero-kpis {
+  display:flex; align-items:center; gap:0;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(10px);
+  border-radius:var(--radius-sm);
+  padding:1.25rem 2rem;
+  width:fit-content;
+  animation:fadeUp .9s .48s var(--ease) both;
+}
+
+.kpi { display:flex; flex-direction:column; align-items:center; padding:0 2rem; }
+.kpi:first-child { padding-left:0; }
+.kpi-n {
+  font-family:var(--font-display);
+  font-size:2.2rem; line-height:1;
+  color:var(--orange);
+  letter-spacing:.02em;
+}
+.kpi-u { font-family:var(--font-display); font-size:1.4rem; color:var(--orange); margin-left:.15rem; }
+.kpi-n + .kpi-u { display:inline; }
+.kpi > *:nth-child(2) { display:inline; } /* unit next to number */
+.kpi-l { font-size:.72rem; letter-spacing:.07em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-top:.3rem; text-align:center; font-weight:500; }
+
+.kpi-sep { width:1px; height:50px; background:rgba(255,255,255,.12); }
+
+/* Scroll cue */
+.hero-scroll {
+  position:absolute; bottom:2rem; left:50%;
+  transform:translateX(-50%); z-index:1;
+}
+.scroll-track { width:26px; height:42px; border:1.5px solid rgba(255,255,255,.3); border-radius:13px; display:flex; justify-content:center; padding-top:6px; }
+.scroll-thumb { width:4px; height:8px; background:var(--orange); border-radius:2px; animation:scrollDown 1.8s ease-in-out infinite; }
+@keyframes scrollDown { 0%,100%{transform:translateY(0);opacity:1;} 75%{transform:translateY(16px);opacity:0;} }
+
+/* ── TRUST BAND ──────────────────────────────────── */
+.trust-band {
+  background:var(--grey-900);
+  padding:1.2rem 0;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.trust-inner {
+  max-width:1200px; margin:0 auto;
+  padding:0 clamp(1.25rem,5vw,2rem);
+  display:flex; align-items:center; gap:2.5rem; flex-wrap:wrap;
+}
+.trust-label { font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); font-weight:600; white-space:nowrap; }
+.trust-badges { display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
+.trust-badge {
+  display:flex; align-items:center; gap:.5rem;
+  font-size:.78rem; font-weight:600; color:rgba(255,255,255,.55);
+  letter-spacing:.04em;
+}
+
+/* ── SECTIONS ────────────────────────────────────── */
+.section { padding: 4rem 0; }
+.section--grey { background: var(--grey-50); }
+.section--about { background: var(--white); overflow: hidden; padding-top: 2rem; }
+.section--dark { background: var(--grey-900); }
+
+/* ── PRODUCT CARDS ───────────────────────────────── */
+.pcard {
+  background:var(--white);
+  border:1px solid var(--grey-200);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur);
+  box-shadow:var(--shadow-card);
+}
+.pcard:hover { transform:translateY(-6px); box-shadow:var(--shadow-lift); border-color:var(--grey-200); }
+
+/* Featured card */
+.pcard--featured { border-color:var(--orange); border-width:2px; }
+.pcard--featured:hover { box-shadow:0 12px 40px rgba(204,0,0,.2); }
+
+/* Image wrap */
+.pcard-img-wrap {
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:var(--grey-100);
+}
+.pcard-img { width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease); }
+.pcard:hover .pcard-img { transform:scale(1.05); }
+
+.pcard-img-svg { background:var(--grey-50); }
+.svg-product-display { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+
+.pcard-img-overlay {
+  position:absolute; inset:0;
+  background:rgba(26,26,26,.55);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transition:opacity var(--dur) var(--ease);
+}
+.pcard:hover .pcard-img-overlay { opacity:1; }
+
+.pcard-cta-hover {
+  font-size:.85rem; font-weight:600; color:var(--white);
+  background:var(--orange);
+  padding:.55rem 1.25rem;
+  border-radius:var(--radius-sm);
+  transition:background var(--dur);
+}
+.pcard-cta-hover:hover { background:var(--orange-dark); }
+
+.pcard-tag {
+  position:absolute; top:.9rem; left:.9rem;
+  font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--grey-700); background:var(--white);
+  padding:.22rem .65rem; border-radius:var(--radius-sm);
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.pcard-tag--orange { background:var(--orange); color:var(--white); }
+
+/* Card body */
+.pcard-body { padding:1.6rem; display:flex; flex-direction:column; gap:.8rem; flex:1; }
+
+.pcard-icon {
+  width:44px; height:44px;
+  background:rgba(91,170,219,.1);
+  border-radius:var(--radius-sm);
+  display:flex; align-items:center; justify-content:center;
+}
+
+.pcard-title { font-family:var(--font-display); font-size:1.2rem; letter-spacing:.02em; color:var(--grey-900); }
+
+.pcard-desc { font-size:.88rem; color:var(--grey-600); line-height:1.65; flex:1; }
+
+.pcard-specs { display:flex; flex-direction:column; gap:.4rem; }
+.pcard-specs li { display:flex; align-items:center; gap:.55rem; font-size:.8rem; color:var(--grey-600); }
+
+.spec-dot { width:5px; height:5px; border-radius:50%; background:var(--blue-icon); flex-shrink:0; }
+.spec-dot--orange { background:var(--orange); }
+
+.pcard-btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:.84rem; font-weight:600;
+  color:var(--grey-800);
+  border:1.5px solid var(--grey-200);
+  padding:.62rem 1rem;
+  border-radius:var(--radius-sm);
+  transition:all var(--dur) var(--ease);
+  margin-top:auto;
+}
+.pcard-btn:hover { border-color:var(--orange); color:var(--orange); background:var(--orange-pale); }
+.pcard-btn--orange { background:var(--orange); color:var(--white); border-color:var(--orange); }
+.pcard-btn--orange:hover { background:var(--orange-dark); border-color:var(--orange-dark); color:var(--white); }
+
+/* ── SERVICE CARDS ───────────────────────────────── */
+.scard {
+  background:var(--white);
+  border:1px solid var(--grey-200);
+  border-radius:var(--radius-md);
+  padding:2rem;
+  display:flex; flex-direction:column; gap:1rem;
+  position:relative; overflow:hidden;
+  transition:transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  box-shadow:var(--shadow-card);
+}
+.scard::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0;
+  height:3px;
+  background:var(--grey-200);
+  transition:background var(--dur);
+}
+.scard:hover { transform:translateY(-5px); box-shadow:var(--shadow-lift); }
+.scard:hover::before { background:var(--blue-icon); }
+
+.scard--highlight {
+  background:var(--grey-900);
+  border-color:transparent;
+}
+.scard--highlight::before { background:var(--orange); }
+.scard--highlight .scard-title { color:var(--white); }
+.scard--highlight .scard-desc,
+.scard--highlight .scard-list li { color:rgba(255,255,255,.6); }
+.scard--highlight:hover { box-shadow:0 12px 40px rgba(0,0,0,.35); }
+
+.scard-icon-wrap {
+  width:60px; height:60px;
+  border-radius:var(--radius-sm);
+  background:rgba(91,170,219,.08);
+  border:1px solid rgba(91,170,219,.15);
+  display:flex; align-items:center; justify-content:center;
+  transition:all var(--dur);
+}
+.scard:hover .scard-icon-wrap { background:rgba(91,170,219,.14); }
+
+.scard-icon-wrap--orange {
+  background:var(--orange);
+  border-color:var(--orange);
+}
+
+.scard-hl-badge {
+  position:absolute; top:1.25rem; right:1.25rem;
+  font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--orange-dark); background:var(--orange);
+  padding:.22rem .65rem; border-radius:var(--radius-sm);
+}
+
+.scard-title { font-family:var(--font-display); font-size:1.15rem; letter-spacing:.02em; color:var(--grey-900); }
+
+.scard-desc { font-size:.89rem; color:var(--grey-600); line-height:1.65; }
+
+.scard-list { display:flex; flex-direction:column; gap:.45rem; }
+.scard-list li {
+  font-size:.81rem; color:var(--grey-600); font-weight:500;
+  padding-left:1rem; position:relative;
+}
+.scard-list li::before {
+  content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:4px; height:4px; border-radius:50%;
+  background:var(--orange);
+}
+
+.scard-link {
+  font-size:.85rem; font-weight:600; color:var(--grey-700);
+  margin-top:auto;
+  display:inline-flex; align-items:center; gap:.35rem;
+  transition:color var(--dur), gap var(--dur);
+}
+.scard-link span { transition:transform var(--dur) var(--ease); }
+.scard-link:hover { color:var(--orange); }
+.scard-link:hover span { transform:translateX(4px); }
+.scard-link--orange { color:rgba(255,255,255,.6); }
+.scard-link--orange:hover { color:var(--orange-light); }
+
+/* ── ABOUT ───────────────────────────────────────── */
+.about-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+}
+
+.about-visual { position:relative; }
+
+.about-img-frame {
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  position:relative;
+  box-shadow:var(--shadow-deep);
+}
+.about-img-frame::before {
+  content:'';
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(to top, rgba(26,26,26,.4) 0%, transparent 50%);
+}
+.about-img { width:100%; height:420px; object-fit:cover; }
+
+.about-img-tag {
+  position:absolute; bottom:1.25rem; left:1.25rem; z-index:2;
+  display:flex; align-items:center; gap:.5rem;
+  font-size:.75rem; font-weight:600; color:var(--white);
+  background:rgba(26,26,26,.8);
+  backdrop-filter:blur(8px);
+  padding:.45rem .9rem; border-radius:var(--radius-sm);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.about-stat-card {
+  position:absolute;
+  top:-1.5rem; right:-1.5rem;
+  background:var(--orange);
+  color:var(--white);
+  border-radius:var(--radius-md);
+  padding:1.25rem 1.5rem;
+  text-align:center;
+  box-shadow:0 8px 24px rgba(204,0,0,.4);
+}
+.asc-number { display:block; font-family:var(--font-display); font-size:2.5rem; line-height:1; }
+.asc-label { font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; opacity:.85; line-height:1.4; }
+
+/* About text */
+.about-text { display:flex; flex-direction:column; gap:1rem; }
+.about-p { font-size:.95rem; color:var(--grey-600); line-height:1.75; }
+
+.about-pillars { display:flex; flex-direction:column; gap:1.1rem; margin-top:.5rem; }
+
+.pillar {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1rem;
+  border:1px solid var(--grey-200);
+  border-radius:var(--radius-sm);
+  transition:border-color var(--dur), background var(--dur);
+}
+.pillar:hover { border-color:rgba(204,0,0,.25); background:var(--orange-pale); }
+
+.pillar-icon {
+  width:38px; height:38px; flex-shrink:0;
+  border-radius:var(--radius-sm);
+  background:rgba(204,0,0,.08);
+  display:flex; align-items:center; justify-content:center;
+}
+.pillar strong { display:block; font-size:.92rem; color:var(--grey-900); margin-bottom:.2rem; }
+.pillar p { font-size:.82rem; color:var(--grey-600); line-height:1.5; }
+
+/* ── CONTACT ─────────────────────────────────────── */
+.contact-layout { display:grid; grid-template-columns:1fr 340px; gap:2rem; align-items:start; }
+
+/* Form */
+.cform-wrap {
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-md); padding:2.25rem;
+}
+.cform { display:flex; flex-direction:column; gap:1rem; }
+.cform-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.cform-group { display:flex; flex-direction:column; gap:.4rem; }
+
+.cform-label { font-size:.78rem; font-weight:600; color:rgba(255,255,255,.55); letter-spacing:.04em; }
+
+.cform-input {
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--grey-900);
+  background: var(--white);
+  border: 1.5px solid var(--grey-200);
+  border-radius: var(--radius-sm);
+  padding: .72rem 1rem;
+  outline: none;
+  width: 100%;
+  transition: border-color var(--dur), box-shadow var(--dur);
+}
+.cform-input::placeholder { color: var(--grey-400); }
+.cform-input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(204,0,0, .1); }
+
+.section--dark .cform-input {
+  color: var(--white);
+  background: rgba(255,255,255, .05);
+  border-color: rgba(255,255,255, .15);
+}
+.section--dark .cform-input::placeholder { color: rgba(255,255,255, .3); }
+.section--dark .cform-label { color: rgba(255,255,255, .6); }
+.cform-select { appearance:none; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right .9rem center; padding-right:2.5rem;
+}
+.cform-select option { background:var(--grey-900); color:var(--white); }
+.cform-ta { resize:vertical; min-height:100px; }
+
+.cform-submit { width:100%; justify-content:center; margin-top:.5rem; padding:.85rem; font-size:.95rem; border-radius:var(--radius-sm); }
+
+/* Contact info */
+.cinfo-col { display:flex; flex-direction:column; gap:1rem; }
+
+.cinfo-card {
+  display:flex; gap:1rem; align-items:flex-start;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-sm);
+  padding:1.1rem;
+  transition:border-color var(--dur);
+}
+.cinfo-card:hover { border-color:rgba(91,170,219,.25); }
+
+.cinfo-icon {
+  width:40px; height:40px; flex-shrink:0;
+  border-radius:var(--radius-sm);
+  background:rgba(91,170,219,.1);
+  display:flex; align-items:center; justify-content:center;
+}
+.cinfo-label { font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.35); font-weight:600; margin-bottom:.3rem; }
+.cinfo-value { font-size:.88rem; color:rgba(255,255,255,.8); font-weight:500; line-height:1.5; transition:color var(--dur); }
+a.cinfo-value:hover { color:var(--orange-light); }
+.cinfo-closed { font-size:.78rem; color:rgba(255,255,255,.3); margin-top:.2rem; }
+
+/* ── FOOTER ──────────────────────────────────────── */
+.footer { background:var(--grey-900); }
+
+.footer-main { padding:4rem 0 2.5rem; border-bottom:1px solid rgba(255,255,255,.07); }
+
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; }
+
+.footer-logo-link { display:flex; align-items:center; gap:.75rem; margin-bottom:1.1rem; }
+.footer-logo { height:36px; width:auto; max-width:120px; object-fit:contain; }
+.footer-brand-name {
+  font-family:var(--font-display); font-size:1.1rem; letter-spacing:.05em;
+  color:var(--white);
+}
+.footer-brand-name span { color:var(--orange); }
+
+.fcol-desc { font-size:.83rem; color:rgba(255,255,255,.45); line-height:1.75; margin-bottom:.85rem; }
+.fcol-nif { background:rgba(255,255,255,.04); font-size:.72rem; color:rgba(255,255,255,.45); letter-spacing:.05em; border:1px solid rgba(255,255,255,.08); padding:.28rem .7rem; border-radius:var(--radius-sm); display:inline-block; }
+
+.fcol-title { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:1.25rem; }
+
+.fcol-list { display:flex; flex-direction:column; gap:.85rem; }
+.fcol-list li { display:flex; align-items:flex-start; gap:.65rem; font-size:.84rem; color:rgba(255,255,255,.5); }
+.fcol-list svg { margin-top:2px; flex-shrink:0; }
+.fcol-list a { transition:color var(--dur); }
+.fcol-list a:hover { color:var(--orange-light); }
+
+.fhours { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:var(--radius-sm); overflow:hidden; }
+.fhour-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:.6rem .9rem; font-size:.82rem;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.fhour-row:last-child { border-bottom:none; }
+.fhour-row span { color:rgba(255,255,255,.45); }
+.fhour-row strong { color:rgba(255,255,255,.25); font-weight:400;}
+.fhour-row strong.closed { color:rgba(255,255,255,.25); font-weight:400; }
+
+.footer-bar { padding:.9rem 0; }
+.footer-bar .container { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.footer-bar p { font-size:.78rem; color:rgba(255,255,255,.25); }
+.fbar-links { display:flex; gap:.75rem; align-items:center; }
+.fbar-links a { font-size:.78rem; color:rgba(255,255,255,.25); transition:color var(--dur); }
+.fbar-links a:hover { color:rgba(255,255,255,.6); }
+.fbar-links span { color:rgba(255,255,255,.12); }
+
+/* ── BACK TO TOP ─────────────────────────────────── */
+.btt {
+  position:fixed; bottom:1.75rem; right:1.75rem; z-index:900;
+  width:44px; height:44px; border-radius:var(--radius-sm);
+  background:var(--orange); color:var(--white);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 18px rgba(204,0,0,.45);
+  opacity:0; pointer-events:none; transform:translateY(10px);
+  transition:all var(--dur) var(--ease);
+}
+.btt.show { opacity:1; pointer-events:all; transform:translateY(0); }
+.btt:hover { background:var(--orange-dark); transform:translateY(-2px); }
+
+/* ── TOAST ───────────────────────────────────────── */
+.toast {
+  position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(12px);
+  z-index:2000;
+  background:var(--grey-800); color:var(--white);
+  padding:.9rem 1.75rem; font-size:.9rem; font-weight:500;
+  border-radius:var(--radius-sm);
+  border-left:3px solid var(--orange);
+  box-shadow:var(--shadow-deep);
+  opacity:0; pointer-events:none;
+  transition:all var(--dur) var(--ease);
+  white-space:nowrap;
+}
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); pointer-events:all; }
+
+/* ── REVEAL ──────────────────────────────────────── */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .6s var(--ease),transform .6s var(--ease); }
+.reveal.in { opacity:1; transform:none; }
+.rd1 { transition-delay:.08s; } .rd2 { transition-delay:.16s; } .rd3 { transition-delay:.24s; }
+
+/* ── KEYFRAMES ───────────────────────────────────── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+@keyframes spin { to { transform:rotate(360deg); } }
+.spin { animation:spin .8s linear infinite; }
+
+/* ── MODAL SYSTEM ────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+  padding: 1.5rem;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 640px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-deep);
+  position: relative;
+  transform: translateY(24px);
+  transition: transform var(--dur) var(--ease);
+  overflow: hidden;
+  border-top: 4px solid var(--orange);
+}
+.modal-overlay.open .modal-card {
+  transform: translateY(0);
+}
+.modal-header {
+  padding: 2rem 2rem 1rem;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--grey-100);
+  color: var(--grey-700);
+  font-size: 1.4rem;
+  font-weight: 300;
+  transition: all var(--dur);
+  cursor: pointer;
+  border: none;
+}
+.modal-close:hover {
+  background: var(--grey-200);
+  color: var(--grey-900);
+}
+.modal-body {
+  padding: 0 2rem 2.5rem;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--grey-900);
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+  padding-right: 2.5rem;
+}
+.modal-ref-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-pale);
+  padding: .2rem .65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+}
+.modal-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--grey-900);
+  margin: 1.75rem 0 0.6rem;
+  border-bottom: 1px solid var(--grey-200);
+  padding-bottom: 0.35rem;
+}
+.modal-desc {
+  font-size: 0.92rem;
+  color: var(--grey-600);
+  line-height: 1.7;
+}
+
+/* Modal Data Table */
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+}
+.modal-table th, .modal-table td {
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--grey-100);
+}
+.modal-table th {
+  background: var(--grey-50);
+  color: var(--grey-900);
+  font-weight: 600;
+  width: 38%;
+}
+.modal-table td {
+  color: var(--grey-700);
+  line-height: 1.5;
+}
+.modal-table tr:last-child th, 
+.modal-table tr:last-child td {
+  border-bottom: none;
+}
+.pcard { cursor: pointer; } /* Indica que todo o card é clicável */
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media (max-width:1024px) {
+  .grid-3 { grid-template-columns:repeat(2,1fr); }
+  .about-grid { grid-template-columns:1fr; gap:3rem; }
+  .about-visual { order:-1; }
+  .about-stat-card { top:auto; bottom:-1rem; right:.75rem; }
+  .sh-title.at-left { text-align:center; }
+  .contact-layout { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width:768px) {
+  .topbar-right { display:none; }
+  .nav-links { display:none; }
+  .burger { display:flex; }
+  .mobile-overlay { display:flex; }
+  .btn-nav-cta:not(.mn-cta) { display:none; }
+
+  .grid-3 { grid-template-columns:1fr; }
+  .hero-kpis { flex-wrap:wrap; gap:0; }
+  .kpi { padding:.75rem 1.25rem; }
+  .kpi-sep { width:100%; height:1px; }
+  .hero-btns { flex-direction:column; }
+  .hero-btns .btn-orange,
+  .hero-btns .btn-ghost { justify-content:center; }
+
+  .footer-grid { grid-template-columns:1fr; gap:2rem; }
+  .footer-bar .container { flex-direction:column; text-align:center; }
+
+  .cform-row { grid-template-columns:1fr; }
+  .section { padding:4rem 0; }
+
+  .about-stat-card { top:-1rem; right:.5rem; padding:1rem; }
+  .asc-number { font-size:1.8rem; }
+}
+
+@media (max-width:480px) {
+  .hero-title { font-size:2rem; }
+  .hero-title--lg { font-size:1.75rem; }
+  .hero-acc-bar { width:3px; }
+  .trust-badges { gap:1rem; }
+  .trust-badge span { display:none; }
+  .kpi-sep { display:none; }
+  .hero-kpis { gap:1rem; }
+}
+
+/* ── PAGINA DE DETALHE DO PRODUTO (ESTILO WORTEN) ── */
+.detail-main-container {
+  padding: 10rem 0 6rem;
+  background-color: var(--grey-50);
+  min-height: 80vh;
+}
+.back-link-wrapper {
+  margin-bottom: 2rem;
+}
+.back-to-catalog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--grey-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--dur);
+}
+.back-to-catalog-btn:hover {
+  color: var(--orange);
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 992px) {
+  .detail-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+.detail-img-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--grey-100);
+}
+.detail-main-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+.detail-ref-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-pale);
+  padding: 0.25rem 0.8rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+.detail-main-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--grey-900);
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+@media (max-width: 576px) {
+  .detail-main-title { font-size: 2rem; }
+}
+.detail-block {
+  margin-bottom: 2.5rem;
+}
+.detail-sec-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--grey-900);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--grey-200);
+  padding-bottom: 0.5rem;
+}
+.detail-text-desc {
+  font-size: 1rem;
+  color: var(--grey-600);
+  line-height: 1.7;
+}
+.detail-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.detail-data-table th, .detail-data-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--grey-100);
+  font-size: 0.95rem;
+}
+.detail-data-table th {
+  background: var(--grey-100);
+  color: var(--grey-900);
+  font-weight: 600;
+  width: 35%;
+}
+.detail-data-table td {
+  color: var(--grey-700);
+}
+.detail-actions {
+  margin-top: 3rem;
+}
+.detail-cta-btn {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--dur);
+  box-shadow: var(--shadow-sm);
+}
+.detail-cta-btn:hover {
+  background: var(--orange-dark);
+}
+/* ── PAGE EMPRESA — LAYOUT SCREENSHOT ─────── */
+.empresa-hero {
+  background: var(--white);
+  padding: 5rem 0 0;
+}
+.empresa-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--grey-600);
+  border: 1px solid var(--grey-200);
+  padding: .3rem .85rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 2.5rem;
+}
+.empresa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+  padding-bottom: 3rem;
+}
+.empresa-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: .02em;
+  color: var(--grey-900);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.empresa-main-title .title-red { color: var(--orange); }
+.empresa-desc {
+  font-size: .97rem;
+  color: var(--grey-600);
+  line-height: 1.78;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+.empresa-pills { display: flex; gap: 1rem; flex-wrap: wrap; }
+.empresa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .75rem 1.25rem;
+  border: 1.5px solid var(--grey-200);
+  border-radius: var(--radius-sm);
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--grey-700);
+  background: var(--white);
+  transition: border-color var(--dur), color var(--dur), background var(--dur);
+}
+.empresa-pill:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--orange-pale);
+}
+.empresa-pill svg { flex-shrink: 0; }
+.empresa-right { position: relative; }
+.empresa-img-frame {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  height: 420px;
+}
+.empresa-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── TIMELINE ── */
+.timeline-section {
+  background: var(--white);
+  border-top: 1px solid var(--grey-100);
+  padding: 3.5rem 0 4rem;
+}
+.timeline-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+}
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--grey-200);
+  z-index: 0;
+}
+.tl-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding-right: 1.5rem;
+}
+.tl-item:last-child { padding-right: 0; }
+.tl-dot {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 2.5px solid var(--orange);
+  box-shadow: 0 0 0 5px rgba(204,0,0,.15);
+  position: relative; z-index: 1;
+  margin-bottom: .9rem;
+  flex-shrink: 0;
+}
+.tl-label {
+  font-family: var(--font-display);
+  font-size: .95rem;
+  letter-spacing: .02em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: .2rem;
+  line-height: 1.2;
+}
+.tl-date {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--grey-700);
+  margin-bottom: .4rem;
+}
+.tl-desc {
+  font-size: .78rem;
+  color: #777;
+  line-height: 1.55;
+}
+@media (max-width: 900px) {
+  .empresa-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .empresa-right { order: -1; }
+  .empresa-img-frame { height: 280px; }
+  .timeline-track { flex-direction: column; gap: 2rem; }
+  .timeline-track::before { top: 0; bottom: 0; left: 8px; right: auto; width: 2px; height: 100%; }
+  .tl-item { flex-direction: row; align-items: flex-start; gap: 1rem; padding-right: 0; }
+  .tl-dot { margin-bottom: 0; margin-top: .1rem; }
+}
+</style>
 </head>
 <body>
+
 <header class="navbar" id="navbar">
-<div class="nav-container">
-<a class="nav-logo" href="index.html">
-<img alt="B.C.L. Logo" class="logo-img" src="images/logo_bcl.png"/>
-<div class="logo-text-group">
-<span class="logo-primary">BROCHADO<span class="logo-amp">&amp;</span>CASTRO</span>
-<span class="logo-sub" data-en="ROAD SAFETY" data-pt="SEGURANÇA RODOVIÁRIA">SEGURANÇA RODOVIÁRIA</span>
-</div>
-</a>
-<nav class="nav-links">
-<a class="nl" data-en="Home" data-pt="Início" href="index.html">Início</a>
-<a class="nl active" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
-<a class="nl" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
-<a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
-<a class="nl" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
-<a class="nl" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
-</nav>
-<div class="nav-right">
-<a class="btn-nav-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
-<div class="lang-switcher">
-<button class="lang-btn active" data-lang="pt">PT</button>
-<button class="lang-btn" data-lang="en">EN</button>
-</div>
-<button class="burger" id="burger"><span></span><span></span><span></span></button>
-</div>
-</div>
+  <div class="nav-container">
+    <a class="nav-logo" href="index.html">
+      <img alt="B.C.L. Logo" class="logo-img" src="images/logo_bcl.png"/>
+      <div class="logo-text-group">
+        <span class="logo-primary">BROCHADO<span class="logo-amp">&amp;</span>CASTRO</span>
+        <span class="logo-sub" data-en="ROAD SAFETY" data-pt="SEGURANÇA RODOVIÁRIA">SEGURANÇA RODOVIÁRIA</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a class="nl" data-en="Home" data-pt="Início" href="index.html">Início</a>
+      <a class="nl active" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+      <a class="nl" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+      <a class="nl" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+      <a class="nl" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+      <a class="nl" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn-nav-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="pt">PT</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
+
 <div class="mobile-overlay" id="mobile-overlay">
-<nav class="mobile-nav">
-<a class="mn-link" data-en="Home" data-pt="Início" href="index.html">Início</a>
-<a class="mn-link active" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
-<a class="mn-link" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
-<a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
-<a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
-<a class="mn-link" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
-<a class="btn-nav-cta mn-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
-<div class="mobile-lang-wrap">
-<div class="lang-switcher">
-<button class="lang-btn active" data-lang="pt">PT</button>
-<button class="lang-btn" data-lang="en">EN</button>
+  <nav class="mobile-nav">
+    <a class="mn-link" data-en="Home" data-pt="Início" href="index.html">Início</a>
+    <a class="mn-link active" data-en="Company" data-pt="Empresa" href="empresa.html">Empresa</a>
+    <a class="mn-link" data-en="News" data-pt="Notícias" href="noticias.html">Notícias</a>
+    <a class="mn-link" data-en="Services" data-pt="Serviços" href="servicos.html">Serviços</a>
+    <a class="mn-link" data-en="Products" data-pt="Produtos" href="produtos.html">Produtos</a>
+    <a class="mn-link" data-en="Contacts" data-pt="Contactos" href="contactos.html">Contactos</a>
+    <a class="btn-nav-cta mn-cta" data-en="Request a Quote" data-pt="Pedir Orçamento" href="orcamento.html">Pedir Orçamento</a>
+    <div class="mobile-lang-wrap">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="pt">PT</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
 </div>
-</div>
-</nav>
-</div>
+
 <main>
-<section class="section section--about" id="empresa" style="padding-top: 1rem;">
-<div class="container">
-<div class="about-grid">
-<div class="about-visual">
-<div class="about-img-frame"><img class="about-img" src="images/product_transport_infrastructure.png"/></div>
-<div class="about-img-tag"><svg fill="none" height="18" stroke="#CC0000" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span data-en="Certified Industrial Facility" data-pt="Unidade Industrial Certificada">Unidade Industrial Certificada</span></div>
-<div class="about-stat-card" style="display:flex; flex-direction:column; align-items:center; gap:.25rem; padding:1rem 1.25rem;">
-  <svg fill="none" height="22" stroke="#fff" stroke-width="2" viewbox="0 0 24 24" width="22"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><line x1="3" x2="21" y1="9" y2="9"></line><line x1="9" x2="9" y1="21" y2="9"></line></svg>
-  <span class="asc-number" style="font-size:1.5rem; letter-spacing:.05em;">1973</span>
-  <span class="asc-label" data-en="Founded in Matosinhos" data-pt="Fundada em Matosinhos">Fundada em Matosinhos</span>
-</div>
-</div>
-<div class="about-text">
-<div class="sh-tag" data-en="Who We Are" data-pt="Quem Somos">Quem Somos</div>
-<h2 class="sh-title at-left"><span data-en="BUILT ON ROADS," data-pt="CONSTRUÍDOS NAS ESTRADAS,">CONSTRUÍDOS NAS ESTRADAS,</span><br/><span class="title-orange" data-en="TRUSTED FOR DECADES" data-pt="CONFIANÇA HÁ DÉCADAS">CONFIANÇA HÁ DÉCADAS</span></h2>
-<p class="about-p" data-en="Since 1973, Brochado &amp; Castro has been shaping the roads of Portugal. Born in Matosinhos, our story is written in every guardrail, barrier and safety component that protects drivers across the country. We don't just manufacture — we engineer the infrastructure that saves lives." data-pt="Desde 1973, a Brochado &amp; Castro molda as estradas de Portugal. Nascida em Matosinhos, a nossa história está escrita em cada guarda-corpos, barreira e componente de segurança que protege os condutores em todo o país. Não fabricamos apenas — nós engenhamos a infraestrutura que salva vidas.">Desde 1973, a Brochado &amp; Castro molda as estradas de Portugal. Nascida em Matosinhos, a nossa história está escrita em cada guarda-corpos, barreira e componente de segurança que protege os condutores em todo o país. Não fabricamos apenas — nós engenhamos a infraestrutura que salva vidas.</p>
-<div class="about-pillars">
-<div class="pillar"><div class="pillar-icon"><svg fill="none" height="20" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><div><strong data-en="Certified Quality" data-pt="Qualidade Certificada">Qualidade Certificada</strong><p data-en="Rigorous production following ISO 9001 and CE standards." data-pt="Produção rigorosa seguindo as normas ISO 9001 e normas CE.">Produção rigorosa seguindo as normas ISO 9001 e normas CE.</p></div></div>
-<div class="pillar"><div class="pillar-icon"><svg fill="none" height="20" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div><div><strong data-en="Road Innovation" data-pt="Inovação Rodoviária">Inovação Rodoviária</strong><p data-en="Constant development of new products for road safety." data-pt="Desenvolvimento constante de novos artigos para a segurança nas estradas.">Desenvolvimento constante de novos artigos para a segurança nas estradas.</p></div></div>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <section class="empresa-hero">
+    <div class="container">
+      <span class="empresa-breadcrumb" data-en="Who We Are" data-pt="Quem Somos">Quem Somos</span>
+      <div class="empresa-grid">
+        <div class="empresa-left">
+          <h1 class="empresa-main-title">
+            <span data-en="A HISTORY OF" data-pt="UMA HISTÓRIA DE">UMA HISTÓRIA DE</span>
+            <span class="title-red" data-en=" ENGINEERING" data-pt=" ENGENHARIA"> ENGENHARIA</span><br/>
+            <span data-en="AND TRUST" data-pt="E CONFIANÇA">E CONFIANÇA</span>
+          </h1>
+          <p class="empresa-desc"
+             data-en="Founded in Matosinhos in 1973, Brochado &amp; Castro has established itself as a national reference in technical plastics moulding and engineering for road safety. We combine decades of industrial tradition with the most advanced technologies to manufacture components that protect lives on Portugal's roads."
+             data-pt="Fundada em Matosinhos em 1973, a Brochado &amp; Castro consolidou-se como um referencial nacional na moldagem de plásticos técnicos e engenharia para a segurança rodoviária. Combinamos décadas de tradição industrial com as mais avançadas tecnologias para fabricar componentes que protegem vidas nas estradas de Portugal.">
+            Fundada em Matosinhos em 1973, a Brochado &amp; Castro consolidou-se como um referencial nacional na moldagem de plásticos técnicos e engenharia para a segurança rodoviária. Combinamos décadas de tradição industrial com as mais avançadas tecnologias para fabricar componentes que protegem vidas nas estradas de Portugal.
+          </p>
+          <div class="empresa-pills">
+            <a class="empresa-pill" href="https://www.certif.pt/pdf/lista_empresas_marcacao_CE.pdf" target="_blank" rel="noopener noreferrer">
+              <svg fill="none" height="18" stroke="#CC0000" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span data-en="Certified Quality" data-pt="Qualidade Certificada">Qualidade Certificada</span>
+            </a>
+            <a class="empresa-pill" href="produtos.html">
+              <svg fill="none" height="18" stroke="#CC0000" stroke-width="2.5" viewBox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span data-en="Road Innovation" data-pt="Inovação Rodoviária">Inovação Rodoviária</span>
+            </a>
+
+          </div>
+        </div>
+        <div class="empresa-right">
+          <div class="empresa-img-frame">
+            <img src="images/hero_bg.png" alt="Unidade industrial Brochado &amp; Castro"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <div class="container">
+      <div class="timeline-track">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-label" data-en="Founding of the Company" data-pt="Fundação da Sociedade">Fundação da Sociedade</div>
+            <div class="tl-date" data-en="17 July 1973" data-pt="17 de Julho de 1973">17 de Julho de 1973</div>
+            <div class="tl-desc" data-en="The company is incorporated as a quota company in Matosinhos. Focus on plastics processing." data-pt="A sociedade por quotas é constituída em Matosinhos. Foco na transformação de plásticos.">A sociedade por quotas é constituída em Matosinhos. Foco na transformação de plásticos.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-label" data-en="Capital Increase" data-pt="Aumento de Capital">Aumento de Capital</div>
+            <div class="tl-date" data-en="March 2002" data-pt="Março de 2002">Março de 2002</div>
+            <div class="tl-desc" data-en="Redenomination and reinforcement of the share capital to the Euro. Registered at the Porto Commercial Registry." data-pt="Redenominação e reforço do capital social para o Euro. Registado na Conservatória do Porto.">Redenominação e reforço do capital social para o Euro. Registado na Conservatória do Porto.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-label" data-en="Management Change" data-pt="Alteração na Gerência">Alteração na Gerência</div>
+            <div class="tl-date" data-en="February 2004" data-pt="Fevereiro de 2004">Fevereiro de 2004</div>
+            <div class="tl-desc" data-en="Cessation of duties of a historic manager. Restructuring of the board." data-pt="Cessação de funções de um gerente histórico. Reestruturação da administração.">Cessação de funções de um gerente histórico. Reestruturação da administração.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-label" data-en="Certifications &amp; Industrial Standards" data-pt="Certificações e Padrões Industriais">Certificações e Padrões Industriais</div>
+            <div class="tl-date" data-en="Recent Period" data-pt="Período Recente">Período Recente</div>
+            <div class="tl-desc" data-en="Presence in the global B2B market. Compliance for blow moulding and injection moulding." data-pt="Atuação no mercado global B2B. Conformidade para moldagem por sopragem e injeção.">Atuação no mercado global B2B. Conformidade para moldagem por sopragem e injeção.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-label" data-en="'Brochado e Castro 1500' Project" data-pt="Aprovação do Projeto 'Brochado e Castro 1500'">Projeto 'Brochado e Castro 1500'</div>
+            <div class="tl-date" data-en="2024 – 2025" data-pt="2024 – 2025">2024 – 2025</div>
+            <div class="tl-desc" data-en="Technological modernisation with Norte 2030 funds. New equipment and management software." data-pt="Modernização tecnológica com fundos Norte 2030. Novos equipamentos e software de gestão.">Modernização tecnológica com fundos Norte 2030. Novos equipamentos e software de gestão.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer class="footer">
-<div class="footer-main">
-<div class="container">
-<div class="footer-grid">
-<div class="fcol fcol--brand">
-<a class="footer-logo-link" href="index.html">
-<img alt="B.C.L. Logo" class="footer-logo" src="images/logo_bcl.png"/>
-<span class="footer-brand-name">BROCHADO<span>&amp;</span>CASTRO</span>
-</a>
-<p class="fcol-desc" data-en="Road safety specialists since 1973. Robust moulding and engineering solutions in Matosinhos." data-pt="Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.">Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.</p>
-<p class="fcol-nif" data-en="Tax ID: 500 048 541" data-pt="NIF: 500 048 541">NIF: 500 048 541</p>
-</div>
-<div class="fcol">
-<h4 class="fcol-title" data-en="Contacts &amp; Location" data-pt="Contactos &amp; Localização">Contactos &amp; Localização</h4>
-<ul class="fcol-list">
-<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
-<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
-<li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span data-en="Rua Fonte Velha, 474, 4460-729 Matosinhos" data-pt="Rua Fonte Velha, 474, 4460-729 Matosinhos">Rua Fonte Velha, 474, 4460-729 Matosinhos</span></li>
-</ul>
-</div>
-<div class="fcol">
-<h4 class="fcol-title" data-en="Opening Hours" data-pt="Horário de Funcionamento">Horário de Funcionamento</h4>
-<div class="fhours">
-<div class="fhour-row"><span data-en="Monday – Friday" data-pt="Segunda – Sexta">Segunda – Sexta</span><strong>08h00 – 17h30</strong></div>
-<div class="fhour-row"><span data-en="Saturday &amp; Sunday" data-pt="Sábado e Domingo">Sábado e Domingo</span><strong class="closed" data-en="Closed" data-pt="Encerrado">Encerrado</strong></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="footer-bar"><div class="container"><p data-en="© 2026 Brochado &amp; Castro, Lda. All rights reserved." data-pt="© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.">© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.</p></div></div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="fcol fcol--brand">
+          <a class="footer-logo-link" href="index.html">
+            <img alt="B.C.L. Logo" class="footer-logo" src="images/logo_bcl.png"/>
+            <span class="footer-brand-name">BROCHADO<span>&amp;</span>CASTRO</span>
+          </a>
+          <p class="fcol-desc" data-en="Road safety specialists since 1973. Robust moulding and engineering solutions in Matosinhos." data-pt="Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.">Especialistas em segurança rodoviária desde 1973. Soluções robustas de moldagem e engenharia em Matosinhos.</p>
+          <p class="fcol-nif" data-en="Tax ID: 500 048 541" data-pt="NIF: 500 048 541">NIF: 500 048 541</p>
+        </div>
+        <div class="fcol">
+          <h4 class="fcol-title" data-en="Contacts &amp; Location" data-pt="Contactos &amp; Localização">Contactos &amp; Localização</h4>
+          <ul class="fcol-list">
+            <li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+351229511174">+351 229 511 174</a></li>
+            <li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:bcl@brochadoecastro.com.pt">bcl@brochadoecastro.com.pt</a></li>
+            <li><svg fill="none" height="14" stroke="#CC0000" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><a href="https://www.google.com/maps/place/Bcl+-+Brochado+%26+Castro,+Lda./@41.1952331,-8.6368682,108m/data=!3m1!1e3!4m15!1m8!3m7!1s0xd2465dfc5a5c7a5:0x478c844fa9edf6eb!2sR.+Fonte+Velha+474,+4460-729+Cust%C3%B3ias!3b1!8m2!3d41.1954163!4d-8.6371579!16s%2Fg%2F11pw1z6jg8!3m5!1s0xd2465dfc53dacab:0x949151ac606fa116!8m2!3d41.1954021!4d-8.6371742!16s%2Fg%2F1tg6lv1z?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" data-en="Rua Fonte Velha, 474, 4460-729 Matosinhos" data-pt="Rua Fonte Velha, 474, 4460-729 Matosinhos">Rua Fonte Velha, 474, 4460-729 Matosinhos</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4 class="fcol-title" data-en="Opening Hours" data-pt="Horário de Funcionamento">Horário de Funcionamento</h4>
+          <div class="fhours">
+            <div class="fhour-row"><span data-en="Monday – Friday" data-pt="Segunda – Sexta">Segunda – Sexta</span><strong>08h00 – 17h30</strong></div>
+            <div class="fhour-row"><span data-en="Saturday &amp; Sunday" data-pt="Sábado e Domingo">Sábado e Domingo</span><strong class="closed" data-en="Closed" data-pt="Encerrado">Encerrado</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><div class="container"><p data-en="© 2026 Brochado &amp; Castro, Lda. All rights reserved." data-pt="© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.">© 2026 Brochado &amp; Castro, Lda. Todos os direitos reservados.</p></div></div>
 </footer>
-<button class="btt" id="btt"><svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="20"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
-<script src="i18n.js"></script><script src="script.js"></script>
+
+<button class="btt" id="btt"><svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+<script>
+/* ====================================================
+   BROCHADO & CASTRO — i18n Engine
+   Language Inline Switcher + Translation System
+==================================================== */
+
+(function () {
+  'use strict';
+
+  const LANGUAGES = {
+    pt: { label: 'PT' },
+    en: { label: 'EN' },
+  };
+
+  const STORAGE_KEY = 'bcl-lang';
+  const DEFAULT_LANG = 'pt';
+
+  let currentLang = (function () {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return (saved && LANGUAGES[saved]) ? saved : DEFAULT_LANG;
+  })();
+
+  function applyLang(lang) {
+    if (!LANGUAGES[lang]) return;
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    /* Text nodes */
+    document.querySelectorAll('[data-pt]').forEach(el => {
+      const val = el.dataset[lang];
+      if (val !== undefined) el.innerHTML = val;
+    });
+
+    /* Placeholders */
+    document.querySelectorAll('[data-pt-ph]').forEach(el => {
+      const val = el.dataset[lang + 'Ph'];
+      if (val !== undefined) el.placeholder = val;
+    });
+
+    /* Select options */
+    document.querySelectorAll('select option[data-pt]').forEach(opt => {
+      const val = opt.dataset[lang];
+      if (val !== undefined) opt.textContent = val;
+    });
+
+    /* Sync inline switcher buttons */
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    document.dispatchEvent(new CustomEvent('bcl:langChange', { detail: { lang } }));
+  }
+
+  function initSwitchers() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        localStorage.setItem(STORAGE_KEY, lang);
+        applyLang(lang);
+      });
+    });
+  }
+
+  window.BCL_i18n = {
+    applyLang,
+    getCurrentLang: () => currentLang,
+    LANGUAGES,
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initSwitchers();
+    applyLang(currentLang);
+  });
+
+})();
+  /* ====================================================
+   BROCHADO & CASTRO — Main Script
+   script.js — Dynamic Catalogue + UI
+   Language engine lives in i18n.js
+==================================================== */
+
+(function () {
+  'use strict';
+
+  /* ══════════════════════════════════════════════════
+     HERO SLIDER (Home page)
+     Cycles hero image + headline/text every 10s.
+     Runs first and is self-contained so it is never
+     skipped by an error elsewhere in this file.
+  ══════════════════════════════════════════════════ */
+  try {
+    const heroImgs  = document.querySelectorAll('.hero-slide-img');
+    const heroTexts = document.querySelectorAll('.hero-slide-text');
+    const heroDots  = document.querySelectorAll('.hero-dot');
+
+    if (heroImgs.length > 1) {
+      let heroIdx = 0;
+      const HERO_INTERVAL = 10000;
+      let heroTimer = null;
+
+      const goToSlide = (i) => {
+        heroIdx = i;
+        heroImgs.forEach((img, n) => img.classList.toggle('active', n === heroIdx));
+        heroTexts.forEach((t, n) => t.classList.toggle('active', n === heroIdx));
+        heroDots.forEach((d, n) => d.classList.toggle('active', n === heroIdx));
+      };
+
+      const nextSlide = () => goToSlide((heroIdx + 1) % heroImgs.length);
+
+      const startHeroTimer = () => {
+        clearInterval(heroTimer);
+        heroTimer = setInterval(nextSlide, HERO_INTERVAL);
+      };
+
+      heroDots.forEach((dot, n) => {
+        dot.addEventListener('click', () => {
+          goToSlide(n);
+          startHeroTimer();
+        });
+      });
+
+      startHeroTimer();
+    }
+  } catch (err) {
+    console.error('Hero slider failed to initialise:', err);
+  }
+
+  /* ══════════════════════════════════════════════════════
+     BILINGUAL PRODUCT DATABASE
+     To add a language: add an `xx: { ... }` block
+     to every product alongside "pt" and "en".
+  ══════════════════════════════════════════════════════ */
+  const CATALOGO = {
+    "1": {
+      imagem: "images/product_barriers.png",
+      pt: {
+        titulo: "Refletores em ABS para Guardas de Segurança",
+        ref: "Ref.ª 107",
+        descricao: "Fabricado em plástico ABS estrutural de alto impacto. Desenvolvido de raiz com furação e curvatura adequadas para aplicação mecânica direta em guardas e rails metálicos de segurança rodoviária.",
+        tabela: [
+          ["Material Base", "Plástico ABS de Alta Resistência"],
+          ["Cores do Refletor", "Vermelho, Branco e Amarelo"],
+          ["Aplicação", "Rails de Segurança / Guardas Rodoviárias"],
+          ["Ótica", "Prismática Retrorefletora de alta performance"]
+        ]
+      },
+      en: {
+        titulo: "ABS Reflectors for Safety Guardrails",
+        ref: "Ref. 107",
+        descricao: "Made from high-impact structural ABS plastic. Developed from scratch with appropriate drilling and curvature for direct mechanical application on metal safety guardrails and rails.",
+        tabela: [
+          ["Base Material", "High-strength ABS Plastic"],
+          ["Reflector Colours", "Red, White and Yellow"],
+          ["Application", "Safety Rails / Road Guardrails"],
+          ["Optics", "High-performance Retroreflective Prismatic"]
+        ]
+      }
+    },
+    "2": {
+      imagem: "images/product_transport_infrastructure.png",
+      pt: {
+        titulo: "Nivelador para Guardas de Segurança",
+        ref: "Ref.ª 108 / 109",
+        descricao: "Elemento de suporte estrutural pesado inteiramente zincado/galvanizado por imersão a quente. Apresenta furação milimétrica padrão ajustável para acoplamento e fixação robusta em prumos de modelo U.",
+        tabela: [
+          ["Acabamento", "Aço Inteiramente Galvanizado"],
+          ["Compatibilidade", "Prumos Viários em U"],
+          ["Medidas Ref.ª 108", "330 x 133 x 67 mm"],
+          ["Medidas Ref.ª 109", "390 x 133 x 67 mm"]
+        ]
+      },
+      en: {
+        titulo: "Guardrail Leveller",
+        ref: "Ref. 108 / 109",
+        descricao: "Heavy structural support element entirely hot-dip zinc-coated/galvanised. Features standard adjustable millimetric drilling for coupling and robust fastening on U-model posts.",
+        tabela: [
+          ["Finish", "Fully Galvanised Steel"],
+          ["Compatibility", "U-shaped Road Posts"],
+          ["Dimensions Ref. 108", "330 x 133 x 67 mm"],
+          ["Dimensions Ref. 109", "390 x 133 x 67 mm"]
+        ]
+      }
+    },
+    "3": {
+      imagem: "images/hero_bg.png",
+      pt: {
+        titulo: "Baia de Fecho de Via (Barreira)",
+        ref: "Ref.ª 200 / 200-A",
+        descricao: "Barreira de corte de tráfego zebrada de alta visibilidade. Fabricada em compósito de fibra de vidro com resinas protetoras e tintas especiais estabilizadas contra raios ultravioleta (U.V.), prevenindo o desgaste da cor.",
+        tabela: [
+          ["Material", "Fibra de Vidro Composta"],
+          ["Padrão Visual", "Zebrado Vermelho e Branco (Tinta Anti-U.V.)"],
+          ["Comp. Ref.ª 200", "2400 mm — 2600 mm (Espessura: 30 mm)"],
+          ["Comp. Ref.ª 200-A", "3300 mm — 3500 mm (Espessura: 30 mm)"]
+        ]
+      },
+      en: {
+        titulo: "Lane Closure Barrier",
+        ref: "Ref. 200 / 200-A",
+        descricao: "High-visibility chevron traffic-cut barrier. Manufactured in fibreglass composite with protective resins and special UV-stabilised paints, preventing colour fading.",
+        tabela: [
+          ["Material", "Composite Fibreglass"],
+          ["Visual Pattern", "Red and White Chevron (UV-resistant paint)"],
+          ["Length Ref. 200", "2400 mm — 2600 mm (Thickness: 30 mm)"],
+          ["Length Ref. 200-A", "3300 mm — 3500 mm (Thickness: 30 mm)"]
+        ]
+      }
+    },
+    "4": {
+      imagem: "images/product_transport_infrastructure.png",
+      pt: {
+        titulo: "Delineador Curto Tipo Meia-Cana",
+        ref: "Ref.ª 103",
+        descricao: "Baliza delineadora flexível de formato meia-cana (tipo 'BRISA'). Construída em Polipropileno (PP) aditivado na cor branca pura. Integra uma faixa preta texturizada fundida com o próprio corpo do delineador.",
+        tabela: [
+          ["Material Corpo", "PP Composto Branco (Resistente a U.V.)"],
+          ["Marca do Refletor", "GUBELA Premium"],
+          ["Dimensões Ótica", "80 x 120 mm"],
+          ["Acessório Incluído", "Ferro Galvanizado para as respetivas aplicações"]
+        ]
+      },
+      en: {
+        titulo: "Short Half-Round Delineator",
+        ref: "Ref. 103",
+        descricao: "Flexible half-round delineator marker ('BRISA' type). Built in white-additive polypropylene (PP). Integrates a textured black stripe fused with the delineator body.",
+        tabela: [
+          ["Body Material", "White Composite PP (UV-resistant)"],
+          ["Reflector Brand", "GUBELA Premium"],
+          ["Optic Dimensions", "80 x 120 mm"],
+          ["Included Accessory", "Galvanised iron for the relevant applications"]
+        ]
+      }
+    },
+    "5": {
+      imagem: "images/product_barriers.png",
+      pt: {
+        titulo: "Baia Bidirecional com Lanterna",
+        ref: "Ref.ª 203 / 203a / 203b",
+        descricao: "Módulo vertical dinâmico de orientação com sinalizador luminoso embutido no topo e base estável. O corpo é moldado em Polietileno (P.E.) composto de alta resistência a impactos.",
+        tabela: [
+          ["Estrutura Principal", "P.E. Composto de Alta Flexibilidade"],
+          ["Padrão de Reflexão", "Preto com Amarelo / Branco com Vermelho"],
+          ["Cores da Base", "Preta, Amarela ou Laranja Injetada"],
+          ["Iluminação", "Lanterna Superior de Sinalização Integrada"]
+        ]
+      },
+      en: {
+        titulo: "Bidirectional Marker with Beacon",
+        ref: "Ref. 203 / 203a / 203b",
+        descricao: "Dynamic vertical orientation module with a built-in top signal beacon and stable base. The body is moulded in high-impact resistant Polyethylene (P.E.) compound.",
+        tabela: [
+          ["Main Structure", "High-flexibility Polyethylene Compound"],
+          ["Reflection Pattern", "Black with Yellow / White with Red"],
+          ["Base Colours", "Black, Yellow or Injected Orange"],
+          ["Lighting", "Integrated Top Signal Beacon"]
+        ]
+      }
+    },
+    "6": {
+      imagem: "images/hero_bg.png",
+      pt: {
+        titulo: "Baias Fixas de Alinhamento (Unidirecional / Bidirecional)",
+        ref: "Ref.ª 201 / 202",
+        descricao: "Painéis modulares em Polietileno de alta espessura para fixação definitiva ou temporária no solo. Ideais para sinalização de divergências, curvas perigosas e balizamento geral de trajetórias.",
+        tabela: [
+          ["Dimensões Totais", "1200 x 300 mm"],
+          ["Material", "Polietileno Composto Industrial"],
+          ["Ref.ª 201 (Unidirecional)", "Preta com reflexão em Amarelo"],
+          ["Ref.ª 202 (Bidirecional)", "Branca com reflexão em Vermelho"]
+        ]
+      },
+      en: {
+        titulo: "Fixed Alignment Markers (Unidirectional / Bidirectional)",
+        ref: "Ref. 201 / 202",
+        descricao: "High-thickness Polyethylene modular panels for permanent or temporary ground mounting. Ideal for divergence signage, dangerous curves, and general path marking.",
+        tabela: [
+          ["Overall Dimensions", "1200 x 300 mm"],
+          ["Material", "Industrial Composite Polyethylene"],
+          ["Ref. 201 (Unidirectional)", "Black with Yellow reflection"],
+          ["Ref. 202 (Bidirectional)", "White with Red reflection"]
+        ]
+      }
+    },
+    "7": {
+      imagem: "images/product_barriers.png",
+      pt: {
+        titulo: "Barreira Anti-Encadeamento B.C.L.",
+        ref: "Ref.ª 113 / 114",
+        descricao: "Lamelas verticais com desenho proprietário clássico concebidas para anular a projeção de luz encadeante dos faróis em sentidos opostos, minimizando de forma drástica o cansaço visual noturno.",
+        tabela: [
+          ["Composição", "Polipropileno (P.P.) e Fibra de Vidro"],
+          ["Dimensões Unitárias", "Altura: 600 mm | Largura Máxima: 125 mm"],
+          ["Peso Técnico", "Aproximadamente 675 g por unidade"],
+          ["Aplicações", "Ref.113 (New Jersey) / Ref.114 (Guardas de Segurança)"]
+        ]
+      },
+      en: {
+        titulo: "B.C.L. Anti-Glare Barrier",
+        ref: "Ref. 113 / 114",
+        descricao: "Vertical slats with a classic proprietary design, created to neutralise glare from oncoming headlights, drastically reducing night-time visual fatigue.",
+        tabela: [
+          ["Composition", "Polypropylene (P.P.) and Fibreglass"],
+          ["Unit Dimensions", "Height: 600 mm | Max. Width: 125 mm"],
+          ["Technical Weight", "Approx. 675 g per unit"],
+          ["Applications", "Ref.113 (New Jersey) / Ref.114 (Safety Guardrails)"]
+        ]
+      }
+    },
+    "8": {
+      imagem: "images/product_transport_infrastructure.png",
+      pt: {
+        titulo: "Barreira Anti-Encadeamento PE (Design Reto)",
+        ref: "Ref.ª 211 / 212 / 213",
+        descricao: "Lâminas retas de desenho sóbrio e simétrico manufaturadas em polietileno avançado. Sistema modular de fácil instalação diretamente ou por suportes dependendo do separador central.",
+        tabela: [
+          ["Material Base", "Polietileno Composto Técnico"],
+          ["Guardas de Segurança", "600mm (Ref.211) | 1000mm (Ref.212) | 1200mm (Ref.213)"],
+          ["Barreiras New Jersey", "600mm (Ref.214) | 1000mm (Ref.215)"]
+        ]
+      },
+      en: {
+        titulo: "PE Anti-Glare Barrier (Straight Design)",
+        ref: "Ref. 211 / 212 / 213",
+        descricao: "Straight blades with a sober, symmetrical design manufactured in advanced polyethylene. Modular system easy to install directly or with brackets depending on the central reservation.",
+        tabela: [
+          ["Base Material", "Technical Composite Polyethylene"],
+          ["Safety Guardrails", "600mm (Ref.211) | 1000mm (Ref.212) | 1200mm (Ref.213)"],
+          ["New Jersey Barriers", "600mm (Ref.214) | 1000mm (Ref.215)"]
+        ]
+      }
+    },
+    "9": {
+      imagem: "images/hero_bg.png",
+      pt: {
+        titulo: "Lamela Anti-Encadeamento Aerodinâmica",
+        ref: "Ref.ª 208 / 209 / 210 / 210A",
+        descricao: "Gama premium de lâminas aerodinâmicas com topos curvos. Projetadas para otimizar o fluxo de vento através do separador central, mantendo a harmonia estética e funcionalidade.",
+        tabela: [
+          ["Design Geométrico", "Perfil Arredondado / Diferenciação Estética"],
+          ["Material", "Polietileno Composto Premium"],
+          ["Guardas de Segurança", "1000mm (Ref.209) | 1200mm (Ref.208)"],
+          ["Barreiras New Jersey", "600mm (Ref.210) | 1000mm (Ref.210A)"]
+        ]
+      },
+      en: {
+        titulo: "Aerodynamic Anti-Glare Slat",
+        ref: "Ref. 208 / 209 / 210 / 210A",
+        descricao: "Premium range of aerodynamic blades with curved tops. Designed to optimise airflow through the central reservation while maintaining aesthetic harmony and full functionality.",
+        tabela: [
+          ["Geometric Design", "Rounded Profile / Aesthetic Differentiation"],
+          ["Material", "Premium Composite Polyethylene"],
+          ["Safety Guardrails", "1000mm (Ref.209) | 1200mm (Ref.208)"],
+          ["New Jersey Barriers", "600mm (Ref.210) | 1000mm (Ref.210A)"]
+        ]
+      }
+    },
+    "10": {
+      imagem: "images/product_transport_infrastructure.png",
+      pt: {
+        titulo: "Delineador Comprido Tipo J6",
+        ref: "Ref.ª 102-1 / 102-3",
+        descricao: "Baliza de berma longa desenvolvida segundo as especificações J.A.E. Produzida em Polietileno branco de alta densidade estável a variações climatéricas com faixa preta em PP.",
+        tabela: [
+          ["Material do Corpo", "P.E. Composto com Filtros Solares U.V."],
+          ["Ótica Refletora", "Refletor GUBELA (40x180 mm ou 50x180 mm)"],
+          ["Efeito Bidirecional", "Opção de 2 refletores circulares Ø 60 mm no verso"],
+          ["Suporte Base", "Inclui base plástica em P.E. composto"]
+        ]
+      },
+      en: {
+        titulo: "Long J6 Delineator",
+        ref: "Ref. 102-1 / 102-3",
+        descricao: "Long shoulder delineator developed to J.A.E. specifications. Produced in high-density white polyethylene stable under weather variations, with a black PP stripe.",
+        tabela: [
+          ["Body Material", "Polyethylene Compound with UV Solar Filters"],
+          ["Reflective Optic", "GUBELA Reflector (40×180 mm or 50×180 mm)"],
+          ["Bidirectional Effect", "Option of 2 circular Ø 60 mm reflectors on the reverse"],
+          ["Base Support", "Includes plastic base in Polyethylene compound"]
+        ]
+      }
+    },
+    "11": {
+      imagem: "images/product_barriers.png",
+      pt: {
+        titulo: "Delineador Curto Tipo J6",
+        ref: "Ref.ª 101-1 / 101-3",
+        descricao: "Delineador viário de formato curto para fixação suspensa. Fabricado em polietileno rígido modificado com banda negra e furos adequados para montagem em guardas ou barreiras New Jersey.",
+        tabela: [
+          ["Fixação Estrutural", "Inclui ferro galvanizado para respetivas aplicações"],
+          ["Ótica Principal", "Refletor GUBELA (40x180 mm / 50x180 mm)"],
+          ["Verso (Opcional)", "2 refletores circulares de Ø 60 mm na outra face"],
+          ["Resistência", "Material Branco aditivado contra radiação U.V."]
+        ]
+      },
+      en: {
+        titulo: "Short J6 Delineator",
+        ref: "Ref. 101-1 / 101-3",
+        descricao: "Short road delineator for suspended mounting. Manufactured in modified rigid polyethylene with a black band and holes suitable for mounting on guardrails or New Jersey barriers.",
+        tabela: [
+          ["Structural Fixing", "Includes galvanised iron for the relevant applications"],
+          ["Main Optics", "GUBELA Reflector (40×180 mm / 50×180 mm)"],
+          ["Reverse (Optional)", "2 circular Ø 60 mm reflectors on the other face"],
+          ["Resistance", "White material treated against UV radiation"]
+        ]
+      }
+    },
+    "12": {
+      imagem: "images/hero_bg.png",
+      pt: {
+        titulo: "Delineador Longo ao Solo Tipo Meia-Cana",
+        ref: "Ref.ª 104",
+        descricao: "Baliza delineadora vertical de solo longa, desenhada sob a tipologia flexível 'BRISA'. O seu corpo côncavo confere-lhe excelente flexibilidade e memória de forma estrutural.",
+        tabela: [
+          ["Geometria", "Tipo Meia-Cana / Perfil Alongado"],
+          ["Material Principal", "P.P. Composto Branco com proteção U.V."],
+          ["Elemento Ótico", "Refletor GUBELA integrado de 80 x 120 mm"],
+          ["Instalação", "Pronto para fixação e furação direta ao solo"]
+        ]
+      },
+      en: {
+        titulo: "Long Ground Half-Round Delineator",
+        ref: "Ref. 104",
+        descricao: "Long vertical ground delineator designed in the flexible 'BRISA' style. Its concave body provides excellent flexibility and structural shape memory.",
+        tabela: [
+          ["Geometry", "Half-Round Type / Elongated Profile"],
+          ["Main Material", "White PP Compound with UV Protection"],
+          ["Optic Element", "Integrated GUBELA Reflector 80 × 120 mm"],
+          ["Installation", "Ready for direct ground mounting and drilling"]
+        ]
+      }
+    }
+  };
+
+  /* ══════════════════════════════════════════════════
+     PAGE TITLES
+     Add a key per language for each page.
+  ══════════════════════════════════════════════════ */
+  const PAGE_TITLES = {
+    "index.html":           { pt: "Brochado & Castro — Início & Contacto",        en: "Brochado & Castro — Home & Contact" },
+    "produtos.html":        { pt: "Brochado & Castro — Produtos",                  en: "Brochado & Castro — Products" },
+    "servicos.html":        { pt: "Brochado & Castro — Serviços",                  en: "Brochado & Castro — Services" },
+    "empresa.html":         { pt: "Brochado & Castro — Empresa",                   en: "Brochado & Castro — Company" },
+    "orcamento.html":       { pt: "Brochado & Castro — Pedir Orçamento",           en: "Brochado & Castro — Request a Quote" },
+    "produto-detalhe.html": { pt: "Especificações do Produto — Brochado & Castro", en: "Product Specifications — Brochado & Castro" }
+  };
+
+  const UI_STRINGS = {
+    pt: { desc: "Breve Descrição", specs: "Especificações Técnicas", cta: "Pedir Orçamento Deste Produto",
+          notFound: "Produto não encontrado", notFoundSub: "O equipamento solicitado não consta no catálogo ativo.", back: "Voltar ao Catálogo", techDetails: "Detalhes Técnicos" },
+    en: { desc: "Brief Description", specs: "Technical Specifications", cta: "Request a Quote for This Product",
+          notFound: "Product not found", notFoundSub: "The requested item is not in the active catalogue.", back: "Back to Catalogue", techDetails: "Technical Details" }
+  };
+
+  /* ══════════════════════════════════════════════════
+     PRODUCT DETAIL PAGE
+  ══════════════════════════════════════════════════ */
+  const detailContainer = document.getElementById('dynamic-product-content');
+
+  function renderProduct(lang) {
+    if (!detailContainer) return;
+    const produtoId = new URLSearchParams(window.location.search).get('id');
+    const entry = CATALOGO[produtoId];
+    const ui = UI_STRINGS[lang] || UI_STRINGS.pt;
+
+    if (!entry || !entry[lang]) {
+      detailContainer.innerHTML = `
+        <div style="padding:5rem 0;text-align:center;">
+          <h2 style="color:var(--grey-800);margin-bottom:1rem;">${ui.notFound}</h2>
+          <p style="color:var(--grey-500);margin-bottom:2rem;">${ui.notFoundSub}</p>
+          <a href="produtos.html" class="btn-nav-cta" style="display:inline-block;">${ui.back}</a>
+        </div>`;
+      return;
+    }
+
+    const p = entry[lang];
+    const rows = p.tabela.map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join('');
+
+    detailContainer.innerHTML = `
+      <div class="detail-grid">
+        <div class="detail-media">
+          <div class="detail-img-card">
+            <img src="${entry.imagem}" alt="${p.titulo}" class="detail-main-img">
+          </div>
+        </div>
+        <div class="detail-info">
+          <span class="detail-ref-badge">${p.ref}</span>
+          <h1 class="detail-main-title">${p.titulo}</h1>
+          <div class="detail-block">
+            <h3 class="detail-sec-title">${ui.desc}</h3>
+            <p class="detail-text-desc">${p.descricao}</p>
+          </div>
+          <div class="detail-block">
+            <h3 class="detail-sec-title">${ui.specs}</h3>
+            <table class="detail-data-table"><tbody>${rows}</tbody></table>
+          </div>
+          <div class="detail-actions">
+            <a href="orcamento.html?ref=${encodeURIComponent(p.ref)}" class="detail-cta-btn">${ui.cta}</a>
+          </div>
+        </div>
+      </div>`;
+
+    document.title = `${p.titulo} — ${ui.techDetails}`;
+  }
+
+  /* Listen for language changes fired by i18n.js */
+  document.addEventListener('bcl:langChange', (e) => {
+    const lang = e.detail.lang;
+    /* Update page title (non-detail pages) */
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    if (page !== 'produto-detalhe.html' && PAGE_TITLES[page]) {
+      document.title = PAGE_TITLES[page][lang] || document.title;
+    }
+    /* Re-render product detail */
+    if (detailContainer) renderProduct(lang);
+  });
+
+  /* Initial render for detail page (i18n.js boots first via DOMContentLoaded) */
+  if (detailContainer) {
+    document.addEventListener('DOMContentLoaded', () => {
+      const lang = window.BCL_i18n ? window.BCL_i18n.getCurrentLang() : 'pt';
+      renderProduct(lang);
+    });
+  }
+
+  /* ══════════════════════════════════════════════════
+     GLOBAL UI
+  ══════════════════════════════════════════════════ */
+  const burger        = document.getElementById('burger');
+  const mobileOverlay = document.getElementById('mobile-overlay');
+  const mobileLinks   = document.querySelectorAll('.mn-link, .mn-cta');
+  const btt           = document.getElementById('btt');
+
+  window.addEventListener('scroll', () => {
+    if (btt) btt.classList.toggle('show', window.scrollY > 500);
+  }, { passive: true });
+
+  function toggleMenu(force) {
+    const open = typeof force === 'boolean' ? force : !burger.classList.contains('open');
+    if (burger) burger.classList.toggle('open', open);
+    if (mobileOverlay) mobileOverlay.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  if (burger) burger.addEventListener('click', () => toggleMenu());
+  mobileLinks.forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+  if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* Scroll Reveal */
+  const revealTargets = document.querySelectorAll('.pcard, .section-head, .detail-img-card, .detail-info, .about-grid, .pillar');
+  revealTargets.forEach((el) => {
+    el.classList.add('reveal');
+    const siblings = el.parentElement
+      ? [...el.parentElement.children].filter(c => c.classList.contains('reveal'))
+      : [];
+    const idx = siblings.indexOf(el);
+    if (idx > 0 && idx <= 3) el.classList.add(`rd${idx}`);
+  });
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.05 });
+  revealTargets.forEach(el => revealObs.observe(el));
+
+  /* Also observe elements that already have .reveal in HTML (e.g. contactos, noticias) */
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+})();
+</script>
 </body>
 </html>
