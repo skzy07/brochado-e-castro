@@ -455,40 +455,36 @@
   const mobileLinks   = document.querySelectorAll('.mn-link, .mn-cta');
   const btt           = document.getElementById('btt');
 
+  window.addEventListener('scroll', () => {
+    if (btt) btt.classList.toggle('show', window.scrollY > 500);
+  }, { passive: true });
+
+  function toggleMenu(force) {
+    const open = typeof force === 'boolean' ? force : !burger.classList.contains('open');
+    if (burger) burger.classList.toggle('open', open);
+    if (mobileOverlay) mobileOverlay.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  if (burger) burger.addEventListener('click', () => toggleMenu());
+  mobileLinks.forEach(l => l.addEventListener('click', () => toggleMenu(false)));
   if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* Sticky Navbar State */
-  const navbar = document.getElementById('navbar');
-  const handleScroll = () => {
-    if (navbar) {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    }
-  };
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Check on init
-
-  /* Scroll Reveal & Entrance Animations */
-  const revealTargets = document.querySelectorAll('.pcard, .scard, .section-head, .about-grid, .pillar, .fcol, .hero-content');
-  revealTargets.forEach((el, i) => {
+  /* Scroll Reveal */
+  const revealTargets = document.querySelectorAll('.pcard, .section-head, .detail-img-card, .detail-info, .about-grid, .pillar');
+  revealTargets.forEach((el) => {
     el.classList.add('reveal');
-    // Stagger logic for children of the same parent
-    const siblings = el.parentElement ? [...el.parentElement.children] : [];
-    const index = siblings.indexOf(el);
-    if (index >= 0) {
-      el.style.transitionDelay = `${(index % 4) * 0.1}s`;
-    }
+    const siblings = el.parentElement
+      ? [...el.parentElement.children].filter(c => c.classList.contains('reveal'))
+      : [];
+    const idx = siblings.indexOf(el);
+    if (idx > 0 && idx <= 3) el.classList.add(`rd${idx}`);
   });
-
   const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        revealObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.05 });
   revealTargets.forEach(el => revealObs.observe(el));
+
+  /* Also observe elements that already have .reveal in HTML (e.g. contactos, noticias) */
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 })();
